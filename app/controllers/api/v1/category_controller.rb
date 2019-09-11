@@ -8,9 +8,10 @@ module Api
             end
 
             def create
-                @catergory = Category.new(category_param)
-                if @category.save                
-                    render json: @catergory
+                category = Category.new(category_param)
+                category.save  
+                if category.save                
+                    render json: category
                 else
                     render json: {status: 0,error: @category.errors},status: :unprocessable_entity
                 end
@@ -18,7 +19,7 @@ module Api
 
             private
             def category_param
-                params.require(:category).permit(:name)
+                params.permit(:name)
             end
         end
     end
