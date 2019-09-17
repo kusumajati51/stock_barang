@@ -3,12 +3,12 @@ module Api
         class CategoryController < ApiController
     
             def index
-                @catergories = Category.all
+                @catergories = current_user.category.all
                 render json: @catergories
             end
 
             def create
-                category = Category.new(category_param)
+                category = current_user.category.new(category_param)
                 category.save  
                 if category.save                
                     render json: category
@@ -19,7 +19,7 @@ module Api
 
             private
             def category_param
-                params.permit(:name)
+                params.permit(:name, :attachment)
             end
         end
     end

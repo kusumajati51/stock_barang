@@ -9,15 +9,18 @@ module Api
             end
 
             def create
-            @product = current_user.product.new(product_param)
-            @product.save
-            render json: @product
+                @product = current_user.product.new(product_param)
+                if @product.save
+                    render json: @product
+                else
+                    render json: { error: @product.errors }  
+                end    
             end
 
             private 
 
             def product_param
-                params.require(:product).permit(:name, :price, :released_on, :category, :category_id)
+                params.permit( :nama, :price, :released_on, :category_id)
             end
         end
     end
