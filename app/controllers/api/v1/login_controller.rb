@@ -19,6 +19,8 @@ module Api
                 else
                     render json: {message: "email anda kosong"}    
                 end
+                rescue ActiveRecord::RecordNotFound => e 
+                   render json: {message: e.to_s}, status: :not_found
             end
 
             private

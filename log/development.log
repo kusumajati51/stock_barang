@@ -7812,3 +7812,740 @@ FOREIGN KEY (`user_id`)
   [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
   [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started POST "/api/v1/login" for 192.168.43.224 at 2019-09-17 12:10:42 +0700
+Cannot render console from 192.168.43.224! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (1.0ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Api::V1::LoginController#create as */*
+  Parameters: {"email"=>"kusumajati51@gmail.com", "password"=>"[FILTERED]", "default"=>{"format"=>"json"}, "login"=>{"email"=>"kusumajati51@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'kusumajati51@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/api/v1/login_controller.rb:7:in `create'
+Completed 404 Not Found in 86ms (ActiveRecord: 4.6ms | Allocations: 4568)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User):
+  
+app/controllers/api/v1/login_controller.rb:7:in `create'
+Started POST "/api/v1/register" for 192.168.43.224 at 2019-09-17 12:13:17 +0700
+Cannot render console from 192.168.43.224! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::RegisterController#create as */*
+  Parameters: {"email"=>"test@s.s", "password"=>"[FILTERED]", "default"=>{"format"=>"json"}, "register"=>{"email"=>"test@s.s", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameters: :default, :register[0m
+DEPRECATION WARNING: Uniqueness validator will no longer enforce case sensitive comparison in Rails 6.1. To continue case sensitive comparison on the :email attribute in User model, pass `case_sensitive: true` option explicitly to the uniqueness validator. (called from create at C:/Development/practice/rails/stock_barang/app/controllers/api/v1/register_controller.rb:6)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/register_controller.rb:6:in `create'
+  [1m[36mUser Exists? (2.0ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'test@s.s' LIMIT 1[0m
+  ↳ app/controllers/api/v1/register_controller.rb:6:in `create'
+  [1m[36mUser Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`name` IS NULL LIMIT 1[0m
+  ↳ app/controllers/api/v1/register_controller.rb:6:in `create'
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`no_hp` IS NULL LIMIT 1[0m
+  ↳ app/controllers/api/v1/register_controller.rb:6:in `create'
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/v1/register_controller.rb:6:in `create'
+Completed 422 Unprocessable Entity in 564ms (Views: 0.4ms | ActiveRecord: 7.8ms | Allocations: 14928)
+
+
+Started POST "/api/v1/login" for 192.168.43.224 at 2019-09-17 12:15:56 +0700
+Cannot render console from 192.168.43.224! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::LoginController#create as */*
+  Parameters: {"email"=>"kusumajati51@gmail.com", "password"=>"[FILTERED]", "default"=>{"format"=>"json"}, "login"=>{"email"=>"kusumajati51@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'kusumajati51@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/api/v1/login_controller.rb:7:in `create'
+Completed 200 OK in 29ms (Views: 0.3ms | ActiveRecord: 1.3ms | Allocations: 3169)
+
+
+Started POST "/api/v1/login" for 192.168.43.224 at 2019-09-17 12:16:33 +0700
+Cannot render console from 192.168.43.224! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::LoginController#create as */*
+  Parameters: {"email"=>"kusumajati51@gmail.com", "password"=>"[FILTERED]", "default"=>{"format"=>"json"}, "login"=>{"email"=>"kusumajati51@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'kusumajati51@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/api/v1/login_controller.rb:7:in `create'
+Completed 200 OK in 29ms (Views: 0.3ms | ActiveRecord: 1.7ms | Allocations: 3196)
+
+
+Started POST "/api/v1/login" for 192.168.43.224 at 2019-09-17 12:17:28 +0700
+Cannot render console from 192.168.43.224! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::LoginController#create as */*
+  Parameters: {"email"=>"kusumajati51@gmail.com", "password"=>"[FILTERED]", "default"=>{"format"=>"json"}, "login"=>{"email"=>"kusumajati51@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'kusumajati51@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/api/v1/login_controller.rb:7:in `create'
+Completed 404 Not Found in 25ms (Views: 0.2ms | ActiveRecord: 1.9ms | Allocations: 3192)
+
+
+Started POST "/api/v1/login" for 192.168.43.224 at 2019-09-17 12:17:45 +0700
+Cannot render console from 192.168.43.224! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::LoginController#create as */*
+  Parameters: {"email"=>"kusumajati51@gmail.com", "password"=>"[FILTERED]", "default"=>{"format"=>"json"}, "login"=>{"email"=>"kusumajati51@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'kusumajati51@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/api/v1/login_controller.rb:7:in `create'
+Completed 404 Not Found in 26ms (Views: 0.3ms | ActiveRecord: 2.2ms | Allocations: 3179)
+
+
+Started POST "/api/v1/register" for 192.168.43.224 at 2019-09-17 12:20:20 +0700
+Cannot render console from 192.168.43.224! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::RegisterController#create as */*
+  Parameters: {"email"=>"test@s.s", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "name"=>"aa", "no_hp"=>"dasdas", "default"=>{"format"=>"json"}, "register"=>{"email"=>"test@s.s", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "name"=>"aa", "no_hp"=>"dasdas"}}
+[31mUnpermitted parameters: :default, :register[0m
+DEPRECATION WARNING: Uniqueness validator will no longer enforce case sensitive comparison in Rails 6.1. To continue case sensitive comparison on the :email attribute in User model, pass `case_sensitive: true` option explicitly to the uniqueness validator. (called from create at C:/Development/practice/rails/stock_barang/app/controllers/api/v1/register_controller.rb:6)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/register_controller.rb:6:in `create'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'test@s.s' LIMIT 1[0m
+  ↳ app/controllers/api/v1/register_controller.rb:6:in `create'
+DEPRECATION WARNING: Uniqueness validator will no longer enforce case sensitive comparison in Rails 6.1. To continue case sensitive comparison on the :name attribute in User model, pass `case_sensitive: true` option explicitly to the uniqueness validator. (called from create at C:/Development/practice/rails/stock_barang/app/controllers/api/v1/register_controller.rb:6)
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`name` = BINARY 'aa' LIMIT 1[0m
+  ↳ app/controllers/api/v1/register_controller.rb:6:in `create'
+DEPRECATION WARNING: Uniqueness validator will no longer enforce case sensitive comparison in Rails 6.1. To continue case sensitive comparison on the :no_hp attribute in User model, pass `case_sensitive: true` option explicitly to the uniqueness validator. (called from create at C:/Development/practice/rails/stock_barang/app/controllers/api/v1/register_controller.rb:6)
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`no_hp` = BINARY 'dasdas' LIMIT 1[0m
+  ↳ app/controllers/api/v1/register_controller.rb:6:in `create'
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO `users` (`email`, `password_digest`, `no_hp`, `name`, `created_at`, `updated_at`) VALUES ('test@s.s', '$2a$12$k50Plw/rqjMCwFdauEQhK.jUboy18BATBSgjSiECrz2lsV6ixdEIq', 'dasdas', 'aa', '2019-09-17 05:20:20.667301', '2019-09-17 05:20:20.667301')[0m
+  ↳ app/controllers/api/v1/register_controller.rb:6:in `create'
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/register_controller.rb:6:in `create'
+Completed 200 OK in 549ms (Views: 0.5ms | ActiveRecord: 6.9ms | Allocations: 13305)
+
+
+Started POST "/api/v1/register" for 192.168.43.224 at 2019-09-17 12:20:29 +0700
+Cannot render console from 192.168.43.224! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::RegisterController#create as */*
+  Parameters: {"email"=>"test@s.s", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "name"=>"aa", "no_hp"=>"08797698899909", "default"=>{"format"=>"json"}, "register"=>{"email"=>"test@s.s", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "name"=>"aa", "no_hp"=>"08797698899909"}}
+[31mUnpermitted parameters: :default, :register[0m
+DEPRECATION WARNING: Uniqueness validator will no longer enforce case sensitive comparison in Rails 6.1. To continue case sensitive comparison on the :email attribute in User model, pass `case_sensitive: true` option explicitly to the uniqueness validator. (called from create at C:/Development/practice/rails/stock_barang/app/controllers/api/v1/register_controller.rb:6)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/register_controller.rb:6:in `create'
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'test@s.s' LIMIT 1[0m
+  ↳ app/controllers/api/v1/register_controller.rb:6:in `create'
+DEPRECATION WARNING: Uniqueness validator will no longer enforce case sensitive comparison in Rails 6.1. To continue case sensitive comparison on the :name attribute in User model, pass `case_sensitive: true` option explicitly to the uniqueness validator. (called from create at C:/Development/practice/rails/stock_barang/app/controllers/api/v1/register_controller.rb:6)
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`name` = BINARY 'aa' LIMIT 1[0m
+  ↳ app/controllers/api/v1/register_controller.rb:6:in `create'
+DEPRECATION WARNING: Uniqueness validator will no longer enforce case sensitive comparison in Rails 6.1. To continue case sensitive comparison on the :no_hp attribute in User model, pass `case_sensitive: true` option explicitly to the uniqueness validator. (called from create at C:/Development/practice/rails/stock_barang/app/controllers/api/v1/register_controller.rb:6)
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`no_hp` = BINARY '08797698899909' LIMIT 1[0m
+  ↳ app/controllers/api/v1/register_controller.rb:6:in `create'
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/v1/register_controller.rb:6:in `create'
+Completed 422 Unprocessable Entity in 478ms (Views: 0.3ms | ActiveRecord: 2.9ms | Allocations: 6389)
+
+
+Started POST "/api/v1/register" for 192.168.43.224 at 2019-09-17 12:20:32 +0700
+Cannot render console from 192.168.43.224! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::RegisterController#create as */*
+  Parameters: {"email"=>"test@s.s", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "name"=>"aa", "no_hp"=>"08797698899909", "default"=>{"format"=>"json"}, "register"=>{"email"=>"test@s.s", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "name"=>"aa", "no_hp"=>"08797698899909"}}
+[31mUnpermitted parameters: :default, :register[0m
+DEPRECATION WARNING: Uniqueness validator will no longer enforce case sensitive comparison in Rails 6.1. To continue case sensitive comparison on the :email attribute in User model, pass `case_sensitive: true` option explicitly to the uniqueness validator. (called from create at C:/Development/practice/rails/stock_barang/app/controllers/api/v1/register_controller.rb:6)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/register_controller.rb:6:in `create'
+  [1m[36mUser Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'test@s.s' LIMIT 1[0m
+  ↳ app/controllers/api/v1/register_controller.rb:6:in `create'
+DEPRECATION WARNING: Uniqueness validator will no longer enforce case sensitive comparison in Rails 6.1. To continue case sensitive comparison on the :name attribute in User model, pass `case_sensitive: true` option explicitly to the uniqueness validator. (called from create at C:/Development/practice/rails/stock_barang/app/controllers/api/v1/register_controller.rb:6)
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`name` = BINARY 'aa' LIMIT 1[0m
+  ↳ app/controllers/api/v1/register_controller.rb:6:in `create'
+DEPRECATION WARNING: Uniqueness validator will no longer enforce case sensitive comparison in Rails 6.1. To continue case sensitive comparison on the :no_hp attribute in User model, pass `case_sensitive: true` option explicitly to the uniqueness validator. (called from create at C:/Development/practice/rails/stock_barang/app/controllers/api/v1/register_controller.rb:6)
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`no_hp` = BINARY '08797698899909' LIMIT 1[0m
+  ↳ app/controllers/api/v1/register_controller.rb:6:in `create'
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/v1/register_controller.rb:6:in `create'
+Completed 422 Unprocessable Entity in 630ms (Views: 0.5ms | ActiveRecord: 2.8ms | Allocations: 6242)
+
+
+Started POST "/api/v1/register" for 192.168.43.224 at 2019-09-17 12:22:13 +0700
+Cannot render console from 192.168.43.224! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::RegisterController#create as */*
+  Parameters: {"email"=>"testa@s.s", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "name"=>"aaa", "no_hp"=>"sdsdas9", "default"=>{"format"=>"json"}, "register"=>{"email"=>"testa@s.s", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "name"=>"aaa", "no_hp"=>"sdsdas9"}}
+[31mUnpermitted parameters: :default, :register[0m
+DEPRECATION WARNING: Uniqueness validator will no longer enforce case sensitive comparison in Rails 6.1. To continue case sensitive comparison on the :email attribute in User model, pass `case_sensitive: true` option explicitly to the uniqueness validator. (called from create at C:/Development/practice/rails/stock_barang/app/controllers/api/v1/register_controller.rb:6)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/register_controller.rb:6:in `create'
+  [1m[36mUser Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'testa@s.s' LIMIT 1[0m
+  ↳ app/controllers/api/v1/register_controller.rb:6:in `create'
+DEPRECATION WARNING: Uniqueness validator will no longer enforce case sensitive comparison in Rails 6.1. To continue case sensitive comparison on the :name attribute in User model, pass `case_sensitive: true` option explicitly to the uniqueness validator. (called from create at C:/Development/practice/rails/stock_barang/app/controllers/api/v1/register_controller.rb:6)
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`name` = BINARY 'aaa' LIMIT 1[0m
+  ↳ app/controllers/api/v1/register_controller.rb:6:in `create'
+DEPRECATION WARNING: Uniqueness validator will no longer enforce case sensitive comparison in Rails 6.1. To continue case sensitive comparison on the :no_hp attribute in User model, pass `case_sensitive: true` option explicitly to the uniqueness validator. (called from create at C:/Development/practice/rails/stock_barang/app/controllers/api/v1/register_controller.rb:6)
+  [1m[36mUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`no_hp` = BINARY 'sdsdas9' LIMIT 1[0m
+  ↳ app/controllers/api/v1/register_controller.rb:6:in `create'
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/v1/register_controller.rb:6:in `create'
+Completed 422 Unprocessable Entity in 663ms (Views: 0.5ms | ActiveRecord: 7.2ms | Allocations: 12478)
+
+
+Started POST "/api/v1/register" for 192.168.43.224 at 2019-09-17 12:22:31 +0700
+Cannot render console from 192.168.43.224! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Error occurred while parsing request parameters.
+Contents:
+
+{
+	"email": "testa@s.s",
+	"password": "Kusuma12!",
+	"password_confirmation": "Kusuma12!",
+	"name":"aaa",
+	"no_hp": 083048230482034
+}
+  
+ActionDispatch::Http::Parameters::ParseError (765: unexpected token at '{
+	"email": "testa@s.s",
+	"password": "Kusuma12!",
+	"password_confirmation": "Kusuma12!",
+	"name":"aaa",
+	"no_hp": 083048230482034
+}'):
+  
+actionpack (6.0.0) lib/action_dispatch/http/parameters.rb:115:in `rescue in parse_formatted_parameters'
+actionpack (6.0.0) lib/action_dispatch/http/parameters.rb:111:in `parse_formatted_parameters'
+actionpack (6.0.0) lib/action_dispatch/http/request.rb:381:in `block in POST'
+rack (2.0.7) lib/rack/request.rb:59:in `fetch'
+rack (2.0.7) lib/rack/request.rb:59:in `fetch_header'
+actionpack (6.0.0) lib/action_dispatch/http/request.rb:380:in `POST'
+actionpack (6.0.0) lib/action_dispatch/http/parameters.rb:55:in `parameters'
+actionpack (6.0.0) lib/action_controller/metal/params_wrapper.rb:279:in `_wrapper_enabled?'
+actionpack (6.0.0) lib/action_controller/metal/params_wrapper.rb:244:in `process_action'
+activerecord (6.0.0) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.0) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.0) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.0) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (6.0.0) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (6.0.0) lib/action_dispatch/routing/route_set.rb:51:in `dispatch'
+actionpack (6.0.0) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.0) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.0) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.0) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.0) lib/action_dispatch/routing/route_set.rb:837:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (6.0.0) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.0) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.0) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.0) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:19:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Error occurred while parsing request parameters.
+Contents:
+
+{
+	"email": "testa@s.s",
+	"password": "Kusuma12!",
+	"password_confirmation": "Kusuma12!",
+	"name":"aaa",
+	"no_hp": 083048230482034
+}
+Started POST "/api/v1/register" for 192.168.43.224 at 2019-09-17 12:22:46 +0700
+Cannot render console from 192.168.43.224! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::RegisterController#create as */*
+  Parameters: {"email"=>"testa@s.s", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "name"=>"aaa", "no_hp"=>"083048230482034", "default"=>{"format"=>"json"}, "register"=>{"email"=>"testa@s.s", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "name"=>"aaa", "no_hp"=>"083048230482034"}}
+[31mUnpermitted parameters: :default, :register[0m
+DEPRECATION WARNING: Uniqueness validator will no longer enforce case sensitive comparison in Rails 6.1. To continue case sensitive comparison on the :email attribute in User model, pass `case_sensitive: true` option explicitly to the uniqueness validator. (called from create at C:/Development/practice/rails/stock_barang/app/controllers/api/v1/register_controller.rb:6)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/register_controller.rb:6:in `create'
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'testa@s.s' LIMIT 1[0m
+  ↳ app/controllers/api/v1/register_controller.rb:6:in `create'
+DEPRECATION WARNING: Uniqueness validator will no longer enforce case sensitive comparison in Rails 6.1. To continue case sensitive comparison on the :name attribute in User model, pass `case_sensitive: true` option explicitly to the uniqueness validator. (called from create at C:/Development/practice/rails/stock_barang/app/controllers/api/v1/register_controller.rb:6)
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`name` = BINARY 'aaa' LIMIT 1[0m
+  ↳ app/controllers/api/v1/register_controller.rb:6:in `create'
+DEPRECATION WARNING: Uniqueness validator will no longer enforce case sensitive comparison in Rails 6.1. To continue case sensitive comparison on the :no_hp attribute in User model, pass `case_sensitive: true` option explicitly to the uniqueness validator. (called from create at C:/Development/practice/rails/stock_barang/app/controllers/api/v1/register_controller.rb:6)
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`no_hp` = BINARY '083048230482034' LIMIT 1[0m
+  ↳ app/controllers/api/v1/register_controller.rb:6:in `create'
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO `users` (`email`, `password_digest`, `no_hp`, `name`, `created_at`, `updated_at`) VALUES ('testa@s.s', '$2a$12$gu3paKhZCDCcNplKKuNjEuNZMrKCiZ6fjOmr1OIFd7SA/o6Gv9NN6', '083048230482034', 'aaa', '2019-09-17 05:22:47.255222', '2019-09-17 05:22:47.255222')[0m
+  ↳ app/controllers/api/v1/register_controller.rb:6:in `create'
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/register_controller.rb:6:in `create'
+Completed 200 OK in 383ms (Views: 0.4ms | ActiveRecord: 4.8ms | Allocations: 8201)
+
+
+Started GET "/api/v1/category/index" for 192.168.43.224 at 2019-09-17 12:24:11 +0700
+Cannot render console from 192.168.43.224! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::CategoryController#index as */*
+  Parameters: {"name"=>"rokok", "attachment"=>#<ActionDispatch::Http::UploadedFile:0x000000000bb6c370 @tempfile=#<Tempfile:C:/Users/ASUS/AppData/Local/Temp/RackMultipart20190917-16948-1i7v2w3.jpg>, @original_filename="8.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"attachment\"; filename=\"8.jpg\"\r\nContent-Type: image/jpeg\r\n">, "default"=>{"format"=>"json"}}
+Completed 200 OK in 14ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 2410)
+
+
+Started GET "/api/v1/category/index" for 192.168.43.224 at 2019-09-17 12:24:29 +0700
+Cannot render console from 192.168.43.224! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::CategoryController#index as */*
+  Parameters: {"name"=>"rokok", "attachment"=>#<ActionDispatch::Http::UploadedFile:0x00000000098e5720 @tempfile=#<Tempfile:C:/Users/ASUS/AppData/Local/Temp/RackMultipart20190917-16948-o36zlu.jpg>, @original_filename="8.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"attachment\"; filename=\"8.jpg\"\r\nContent-Type: image/jpeg\r\n">, "default"=>{"format"=>"json"}}
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 734)
+
+
+Started GET "/api/v1/category/index" for 192.168.43.224 at 2019-09-17 12:24:36 +0700
+Cannot render console from 192.168.43.224! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::CategoryController#index as */*
+  Parameters: {"name"=>"rokok", "attachment"=>#<ActionDispatch::Http::UploadedFile:0x00000000074d0ce0 @tempfile=#<Tempfile:C:/Users/ASUS/AppData/Local/Temp/RackMultipart20190917-16948-1y3yjsh.jpg>, @original_filename="8.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"attachment\"; filename=\"8.jpg\"\r\nContent-Type: image/jpeg\r\n">, "default"=>{"format"=>"json"}}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 734)
+
+
+Started GET "/api/v1/category/index" for 192.168.43.224 at 2019-09-17 12:25:43 +0700
+Cannot render console from 192.168.43.224! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::CategoryController#index as */*
+  Parameters: {"name"=>"rokok", "attachment"=>#<ActionDispatch::Http::UploadedFile:0x000000000c5ebf08 @tempfile=#<Tempfile:C:/Users/ASUS/AppData/Local/Temp/RackMultipart20190917-16948-nr3hpd.jpg>, @original_filename="8.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"attachment\"; filename=\"8.jpg\"\r\nContent-Type: image/jpeg\r\n">, "default"=>{"format"=>"json"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/api_controller.rb:7:in `current_user'
+Completed 500 Internal Server Error in 84ms (ActiveRecord: 3.8ms | Allocations: 10704)
+
+
+  
+NoMethodError (undefined method `category' for #<User:0x000000000c5a0ad0>):
+  
+app/controllers/api/v1/category_controller.rb:7:in `index'
+Started GET "/api/v1/category/index" for 192.168.43.224 at 2019-09-17 12:26:04 +0700
+Cannot render console from 192.168.43.224! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::CategoryController#index as */*
+  Parameters: {"name"=>"rokok", "attachment"=>#<ActionDispatch::Http::UploadedFile:0x0000000007cb2ff8 @tempfile=#<Tempfile:C:/Users/ASUS/AppData/Local/Temp/RackMultipart20190917-16948-1phve1e.jpg>, @original_filename="8.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"attachment\"; filename=\"8.jpg\"\r\nContent-Type: image/jpeg\r\n">, "default"=>{"format"=>"json"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/api_controller.rb:7:in `current_user'
+  [1m[36mCategory Load (1.9ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`user_id` = 2[0m
+  ↳ app/controllers/api/v1/category_controller.rb:8:in `index'
+Completed 500 Internal Server Error in 173ms (ActiveRecord: 8.7ms | Allocations: 16187)
+
+
+  
+ActiveRecord::StatementInvalid (Mysql2::Error: Unknown column 'categories.user_id' in 'where clause'):
+  
+app/controllers/api/v1/category_controller.rb:8:in `index'
+  [1m[35m (1.1ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (0.9ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (87.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS `stock_barang_development`[0m
+  [1m[35m (0.6ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (85.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS `stock_barang_test`[0m
+  [1m[35m (0.9ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (10.1ms)[0m  [1m[35mCREATE DATABASE `stock_barang_development` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (0.6ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE DATABASE `stock_barang_test` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (0.7ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (64.1ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+  [1m[35m (57.0ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT GET_LOCK('6348631315957321965', 0)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateUsers (20190910065133)
+  [1m[35m (62.8ms)[0m  [1m[35mCREATE TABLE `users` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `email` varchar(255), `password_digest` varchar(255), `no_hp` varchar(255), `name` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190910065133')[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCategories (20190911110035)
+  [1m[35m (59.6ms)[0m  [1m[35mCREATE TABLE `categories` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `attachment` varchar(255), `user_id` bigint, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL,  INDEX `index_categories_on_user_id`  (`user_id`), CONSTRAINT `fk_rails_b8e2f7adfc`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mprimary::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190911110035')[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateProducts (20190911111806)
+  [1m[35m (60.6ms)[0m  [1m[35mCREATE TABLE `products` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `category_id` bigint, `price` int, `attachment` varchar(255), `released_on` date, `user_id` bigint, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL,  INDEX `index_products_on_category_id`  (`category_id`),  INDEX `index_products_on_user_id`  (`user_id`), CONSTRAINT `fk_rails_fb915499a4`
+FOREIGN KEY (`category_id`)
+  REFERENCES `categories` (`id`)
+, CONSTRAINT `fk_rails_dee2631783`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mprimary::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190911111806')[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2019-09-17 05:29:36.909278', '2019-09-17 05:29:36.909278')[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT RELEASE_LOCK('6348631315957321965')[0m
+  [1m[35m (0.6ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started POST "/api/v1/register" for 192.168.43.224 at 2019-09-17 12:31:07 +0700
+Cannot render console from 192.168.43.224! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.6ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Api::V1::RegisterController#create as */*
+  Parameters: {"email"=>"testa@s.s", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "name"=>"aaa", "no_hp"=>"083048230482034", "default"=>{"format"=>"json"}, "register"=>{"email"=>"testa@s.s", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "name"=>"aaa", "no_hp"=>"083048230482034"}}
+[31mUnpermitted parameters: :default, :register[0m
+DEPRECATION WARNING: Uniqueness validator will no longer enforce case sensitive comparison in Rails 6.1. To continue case sensitive comparison on the :email attribute in User model, pass `case_sensitive: true` option explicitly to the uniqueness validator. (called from create at C:/Development/practice/rails/stock_barang/app/controllers/api/v1/register_controller.rb:6)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/register_controller.rb:6:in `create'
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'testa@s.s' LIMIT 1[0m
+  ↳ app/controllers/api/v1/register_controller.rb:6:in `create'
+DEPRECATION WARNING: Uniqueness validator will no longer enforce case sensitive comparison in Rails 6.1. To continue case sensitive comparison on the :name attribute in User model, pass `case_sensitive: true` option explicitly to the uniqueness validator. (called from create at C:/Development/practice/rails/stock_barang/app/controllers/api/v1/register_controller.rb:6)
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`name` = BINARY 'aaa' LIMIT 1[0m
+  ↳ app/controllers/api/v1/register_controller.rb:6:in `create'
+DEPRECATION WARNING: Uniqueness validator will no longer enforce case sensitive comparison in Rails 6.1. To continue case sensitive comparison on the :no_hp attribute in User model, pass `case_sensitive: true` option explicitly to the uniqueness validator. (called from create at C:/Development/practice/rails/stock_barang/app/controllers/api/v1/register_controller.rb:6)
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`no_hp` = BINARY '083048230482034' LIMIT 1[0m
+  ↳ app/controllers/api/v1/register_controller.rb:6:in `create'
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO `users` (`email`, `password_digest`, `no_hp`, `name`, `created_at`, `updated_at`) VALUES ('testa@s.s', '$2a$12$WFDC2gJ8345IYDdeBq2WXelADRIMB.9p64ndpQrJLRJeGotq6VWze', '083048230482034', 'aaa', '2019-09-17 05:31:08.480477', '2019-09-17 05:31:08.480477')[0m
+  ↳ app/controllers/api/v1/register_controller.rb:6:in `create'
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/register_controller.rb:6:in `create'
+Completed 200 OK in 619ms (Views: 0.5ms | ActiveRecord: 9.0ms | Allocations: 18197)
+
+
+Started GET "/api/v1/category/index" for 192.168.43.224 at 2019-09-17 12:31:22 +0700
+Cannot render console from 192.168.43.224! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::CategoryController#index as */*
+  Parameters: {"name"=>"rokok", "attachment"=>#<ActionDispatch::Http::UploadedFile:0x000000000c0bd6a8 @tempfile=#<Tempfile:C:/Users/ASUS/AppData/Local/Temp/RackMultipart20190917-18000-1m8cywj.jpg>, @original_filename="8.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"attachment\"; filename=\"8.jpg\"\r\nContent-Type: image/jpeg\r\n">, "default"=>{"format"=>"json"}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/api_controller.rb:7:in `current_user'
+  [1m[36mCategory Load (2.0ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`user_id` = 1[0m
+  ↳ app/controllers/api/v1/category_controller.rb:8:in `index'
+Completed 200 OK in 137ms (Views: 4.4ms | ActiveRecord: 6.7ms | Allocations: 8451)
+
+
+Started GET "/api/v1/category/baru" for 192.168.43.224 at 2019-09-17 12:31:30 +0700
+Cannot render console from 192.168.43.224! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/category/baru"):
+  
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:19:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/api/v1/category/baru" for 192.168.43.224 at 2019-09-17 12:31:36 +0700
+Cannot render console from 192.168.43.224! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::CategoryController#create as */*
+  Parameters: {"name"=>"rokok", "attachment"=>#<ActionDispatch::Http::UploadedFile:0x000000000c8241a8 @tempfile=#<Tempfile:C:/Users/ASUS/AppData/Local/Temp/RackMultipart20190917-18000-139q085.jpg>, @original_filename="8.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"attachment\"; filename=\"8.jpg\"\r\nContent-Type: image/jpeg\r\n">, "default"=>{"format"=>"json"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/api_controller.rb:7:in `current_user'
+[31mUnpermitted parameter: :default[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/category_controller.rb:13:in `create'
+  [1m[36mCategory Create (0.6ms)[0m  [1m[32mINSERT INTO `categories` (`name`, `attachment`, `user_id`, `created_at`, `updated_at`) VALUES ('rokok', '#<ActionDispatch::Http::UploadedFile:0x000000000c8241a8>', 1, '2019-09-17 05:31:36.931911', '2019-09-17 05:31:36.931911')[0m
+  ↳ app/controllers/api/v1/category_controller.rb:13:in `create'
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/category_controller.rb:13:in `create'
+Completed 200 OK in 144ms (Views: 1.3ms | ActiveRecord: 4.2ms | Allocations: 9003)
+
+
+Started POST "/api/v1/category/baru" for 192.168.43.224 at 2019-09-17 12:32:22 +0700
+Cannot render console from 192.168.43.224! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::CategoryController#create as */*
+  Parameters: {"name"=>"korek", "attachment"=>#<ActionDispatch::Http::UploadedFile:0x000000000d0bb5a0 @tempfile=#<Tempfile:C:/Users/ASUS/AppData/Local/Temp/RackMultipart20190917-18000-1t835fw.jpg>, @original_filename="8.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"attachment\"; filename=\"8.jpg\"\r\nContent-Type: image/jpeg\r\n">, "default"=>{"format"=>"json"}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/api_controller.rb:7:in `current_user'
+[31mUnpermitted parameter: :default[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/category_controller.rb:13:in `create'
+  [1m[36mCategory Create (0.6ms)[0m  [1m[32mINSERT INTO `categories` (`name`, `attachment`, `user_id`, `created_at`, `updated_at`) VALUES ('korek', '8.jpg', 1, '2019-09-17 05:32:22.650610', '2019-09-17 05:32:22.650610')[0m
+  ↳ app/controllers/api/v1/category_controller.rb:13:in `create'
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/category_controller.rb:13:in `create'
+Completed 200 OK in 286ms (Views: 1.8ms | ActiveRecord: 10.3ms | Allocations: 23369)
+
+
+Started POST "/api/v1/category/baru" for 192.168.43.224 at 2019-09-17 12:41:23 +0700
+Cannot render console from 192.168.43.224! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.8ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Processing by Api::V1::CategoryController#create as */*
+  Parameters: {"name"=>"korek", "attachment"=>"sasasas", "default"=>{"format"=>"json"}}
+  [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/api_controller.rb:7:in `current_user'
+[31mUnpermitted parameter: :default[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/category_controller.rb:13:in `create'
+  [1m[36mCategory Create (2.7ms)[0m  [1m[32mINSERT INTO `categories` (`name`, `attachment`, `user_id`, `created_at`, `updated_at`) VALUES ('korek', NULL, 1, '2019-09-17 05:41:23.738192', '2019-09-17 05:41:23.738192')[0m
+  ↳ app/controllers/api/v1/category_controller.rb:13:in `create'
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/category_controller.rb:13:in `create'
+Completed 200 OK in 156ms (Views: 17.7ms | ActiveRecord: 8.2ms | Allocations: 18059)
+
+
+Started POST "/api/v1/register" for 192.168.43.1 at 2019-09-17 12:48:45 +0700
+Cannot render console from 192.168.43.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (1.8ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Processing by Api::V1::RegisterController#create as HTML
+  Parameters: {"name"=>"jati", "email"=>"kusumajati51@gmail.com", "no_hp"=>"jzjsnzk", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "default"=>{"format"=>"json"}}
+[31mUnpermitted parameter: :default[0m
+DEPRECATION WARNING: Uniqueness validator will no longer enforce case sensitive comparison in Rails 6.1. To continue case sensitive comparison on the :email attribute in User model, pass `case_sensitive: true` option explicitly to the uniqueness validator. (called from create at C:/Development/practice/rails/stock_barang/app/controllers/api/v1/register_controller.rb:6)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/register_controller.rb:6:in `create'
+  [1m[36mUser Exists? (6.0ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'kusumajati51@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/api/v1/register_controller.rb:6:in `create'
+DEPRECATION WARNING: Uniqueness validator will no longer enforce case sensitive comparison in Rails 6.1. To continue case sensitive comparison on the :name attribute in User model, pass `case_sensitive: true` option explicitly to the uniqueness validator. (called from create at C:/Development/practice/rails/stock_barang/app/controllers/api/v1/register_controller.rb:6)
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`name` = BINARY 'jati' LIMIT 1[0m
+  ↳ app/controllers/api/v1/register_controller.rb:6:in `create'
+DEPRECATION WARNING: Uniqueness validator will no longer enforce case sensitive comparison in Rails 6.1. To continue case sensitive comparison on the :no_hp attribute in User model, pass `case_sensitive: true` option explicitly to the uniqueness validator. (called from create at C:/Development/practice/rails/stock_barang/app/controllers/api/v1/register_controller.rb:6)
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`no_hp` = BINARY 'jzjsnzk' LIMIT 1[0m
+  ↳ app/controllers/api/v1/register_controller.rb:6:in `create'
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/v1/register_controller.rb:6:in `create'
+Completed 422 Unprocessable Entity in 782ms (Views: 2.2ms | ActiveRecord: 7.8ms | Allocations: 9585)
+
+
+Started POST "/api/v1/register" for 192.168.43.1 at 2019-09-17 12:48:58 +0700
+Cannot render console from 192.168.43.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::RegisterController#create as HTML
+  Parameters: {"name"=>"jati", "email"=>"kusumajati51@gmail.com", "no_hp"=>"087787764186", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "default"=>{"format"=>"json"}}
+[31mUnpermitted parameter: :default[0m
+DEPRECATION WARNING: Uniqueness validator will no longer enforce case sensitive comparison in Rails 6.1. To continue case sensitive comparison on the :email attribute in User model, pass `case_sensitive: true` option explicitly to the uniqueness validator. (called from create at C:/Development/practice/rails/stock_barang/app/controllers/api/v1/register_controller.rb:6)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/register_controller.rb:6:in `create'
+  [1m[36mUser Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'kusumajati51@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/api/v1/register_controller.rb:6:in `create'
+DEPRECATION WARNING: Uniqueness validator will no longer enforce case sensitive comparison in Rails 6.1. To continue case sensitive comparison on the :name attribute in User model, pass `case_sensitive: true` option explicitly to the uniqueness validator. (called from create at C:/Development/practice/rails/stock_barang/app/controllers/api/v1/register_controller.rb:6)
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`name` = BINARY 'jati' LIMIT 1[0m
+  ↳ app/controllers/api/v1/register_controller.rb:6:in `create'
+DEPRECATION WARNING: Uniqueness validator will no longer enforce case sensitive comparison in Rails 6.1. To continue case sensitive comparison on the :no_hp attribute in User model, pass `case_sensitive: true` option explicitly to the uniqueness validator. (called from create at C:/Development/practice/rails/stock_barang/app/controllers/api/v1/register_controller.rb:6)
+  [1m[36mUser Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`no_hp` = BINARY '087787764186' LIMIT 1[0m
+  ↳ app/controllers/api/v1/register_controller.rb:6:in `create'
+  [1m[36mUser Create (3.8ms)[0m  [1m[32mINSERT INTO `users` (`email`, `password_digest`, `no_hp`, `name`, `created_at`, `updated_at`) VALUES ('kusumajati51@gmail.com', '$2a$12$WbpAfs63deyW49uZtSEC2uZpt5Jsm2uiHmSJhehwL1wu66bj6S2jS', '087787764186', 'jati', '2019-09-17 05:48:59.345485', '2019-09-17 05:48:59.345485')[0m
+  ↳ app/controllers/api/v1/register_controller.rb:6:in `create'
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/register_controller.rb:6:in `create'
+Completed 200 OK in 759ms (Views: 0.8ms | ActiveRecord: 9.9ms | Allocations: 8373)
+
+
+  [1m[35m (1.3ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT GET_LOCK('6348631315957321965', 0)[0m
+  [1m[35m (12.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to ChangeTableProduct (20190917113126)
+  [1m[35m (5.5ms)[0m  [1m[35mALTER TABLE `product` ADD `check_in` int[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT RELEASE_LOCK('6348631315957321965')[0m
+  [1m[35m (0.6ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT GET_LOCK('6348631315957321965', 0)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to ChangeTableProduct (20190917113126)
+  [1m[35m (100.6ms)[0m  [1m[35mALTER TABLE `products` ADD `check_in` int[0m
+  [1m[35m (1.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mprimary::SchemaMigration Create (3.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190917113126')[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT RELEASE_LOCK('6348631315957321965')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('6348631315957321965', 0)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT RELEASE_LOCK('6348631315957321965')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('6348631315957321965', 0)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to ChangeTableProduct2 (20190917114524)
+  [1m[35m (125.7ms)[0m  [1m[35mALTER TABLE `products` ADD `check_out` int[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE `products` ADD `stock` integert[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT RELEASE_LOCK('6348631315957321965')[0m
+  [1m[35m (0.7ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT GET_LOCK('6348631315957321965', 0)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to ChangeTableProduct2 (20190917114524)
+  [1m[35m (2.4ms)[0m  [1m[35mALTER TABLE `products` ADD `check_out` int[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT RELEASE_LOCK('6348631315957321965')[0m
+  [1m[35m (0.7ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('6348631315957321965', 0)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to ChangeTableProduct2 (20190917114524)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mprimary::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190917114524')[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT RELEASE_LOCK('6348631315957321965')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT GET_LOCK('6348631315957321965', 0)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT RELEASE_LOCK('6348631315957321965')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('6348631315957321965', 0)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to ChangeTableProduct2 (20190917115238)
+  [1m[35m (4.6ms)[0m  [1m[35mALTER TABLE `products` ADD `check_out` int[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT RELEASE_LOCK('6348631315957321965')[0m
+  [1m[35m (0.7ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('6348631315957321965', 0)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to ChangeTableProduct2 (20190917115238)
+  [1m[35m (108.9ms)[0m  [1m[35mALTER TABLE `products` ADD `stock` int[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190917115238')[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT RELEASE_LOCK('6348631315957321965')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT GET_LOCK('6348631315957321965', 0)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT RELEASE_LOCK('6348631315957321965')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('6348631315957321965', 0)[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT RELEASE_LOCK('6348631315957321965')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (1.1ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT GET_LOCK('6348631315957321965', 0)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT RELEASE_LOCK('6348631315957321965')[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT GET_LOCK('6348631315957321965', 0)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT RELEASE_LOCK('6348631315957321965')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('6348631315957321965', 0)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT RELEASE_LOCK('6348631315957321965')[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT GET_LOCK('6348631315957321965', 0)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to ChangeTableProduct2 (20190917115238)
+  [1m[36mprimary::SchemaMigration Destroy (7.4ms)[0m  [1m[31mDELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20190917115238'[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT RELEASE_LOCK('6348631315957321965')[0m
+  [1m[35m (0.7ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('6348631315957321965', 0)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to ChangeTableProduct2 (20190917115238)
+  [1m[35m (3.4ms)[0m  [1m[35mALTER TABLE `products` ADD `check_out` int[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT RELEASE_LOCK('6348631315957321965')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('6348631315957321965', 0)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to ChangeTableProduct2 (20190917115238)
+  [1m[35m (1.2ms)[0m  [1m[35mALTER TABLE `products` ADD `stock` int[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT RELEASE_LOCK('6348631315957321965')[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT GET_LOCK('6348631315957321965', 0)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to ChangeTableProduct2 (20190917115238)
+  [1m[35m (24.1ms)[0m  [1m[35mALTER TABLE `products` CHANGE `attachment` `poduct_picture` varchar(255) DEFAULT NULL[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190917115238')[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT RELEASE_LOCK('6348631315957321965')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('6348631315957321965', 0)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to ChangeTableProduct2 (20190917115238)
+  [1m[35m (3.6ms)[0m  [1m[35mALTER TABLE `products` ADD `check_out` int[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT RELEASE_LOCK('6348631315957321965')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT GET_LOCK('6348631315957321965', 0)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT RELEASE_LOCK('6348631315957321965')[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (11.6ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT GET_LOCK('6348631315957321965', 0)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to ChangeTableProduct2 (20190917115238)
+  [1m[36mprimary::SchemaMigration Destroy (2.1ms)[0m  [1m[31mDELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20190917115238'[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT RELEASE_LOCK('6348631315957321965')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (7.1ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('6348631315957321965', 0)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to ChangeTableProduct2 (20190917115238)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT RELEASE_LOCK('6348631315957321965')[0m
+  [1m[35m (0.6ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('6348631315957321965', 0)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to ChangeTableProduct2 (20190917115238)
+  [1m[35m (18.3ms)[0m  [1m[35mALTER TABLE `products` CHANGE `poduct_picture` `product_picture` varchar(255) DEFAULT NULL[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190917115238')[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT RELEASE_LOCK('6348631315957321965')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m

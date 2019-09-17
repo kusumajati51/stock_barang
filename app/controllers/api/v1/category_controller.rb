@@ -1,7 +1,8 @@
 module Api
     module V1
         class CategoryController < ApiController
-    
+            before_action :authorize_access_request!
+
             def index
                 @catergories = current_user.category.all
                 render json: @catergories

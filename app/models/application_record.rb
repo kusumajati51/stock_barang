@@ -1,3 +1,4 @@
 class ApplicationRecord < ActiveRecord::Base
-  self.abstract_class = true
+  mount_uploader :attachment, AttachmentUploader
+  self.abstract_class = true  
 end
