@@ -2,7 +2,7 @@ class Product < ApplicationRecord
   mount_uploader :product_picture, PoductPictureUploader
   belongs_to :category
   belongs_to :user
-  after_create :init
+  before_create :init
 
   def init
     self.check_out = 0

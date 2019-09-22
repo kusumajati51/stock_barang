@@ -16,6 +16,8 @@ module Api
                 else
                     render json: {status: 0,error: @category.errors},status: :unprocessable_entity
                 end
+                rescue ActionController::BadRequest => e 
+                   render json: {message: e.to_s}, status: :bad_request
             end
 
             private

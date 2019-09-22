@@ -10,7 +10,7 @@ module StockBarang
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
-      
+    config.web_console.whitelisted_ips = '192.168.43.224'
     # config.api_only = true
 
     # Settings in config/environments/* take precedence over those specified here.
