@@ -3,8 +3,11 @@ Rails.application.routes.draw do
     namespace :v1 do
       post '/register', to:'register#create'
       post '/login', to:'login#create'
+
       get '/product/index', to:'product#index'
-      get '/category/index', to:'category#index'
+      get '/category/index/menu', to:'category#index'
+      get '/category/index/spinner', to: 'category#spinner_category'
+
       post '/product/baru', to:'product#create'
       post '/category/baru', to:'category#create'
    end

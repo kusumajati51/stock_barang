@@ -5,7 +5,27 @@ module Api
 
             def index
                 @catergories = current_user.category.all
-                render json: @catergories
+                @item ||=[]
+                @catergories.each do |category|
+                    data = {id: category.id ,name: category.name,
+                    url_pict: category.attachment.url}
+                @item.push(data)
+                end
+                @response = {status: 1, data: @item}
+                render json: @response
+            end
+
+            def spinner_category 
+                @catergories = current_user.category.all
+                @item ||=[]
+                @catergories.each do |category|
+                    data = {id: category.id ,name: category.name}
+                @item.push(data)
+                
+                end
+                
+                @response = {status: 1, data: @item}
+                render json: @response
             end
 
             def create
@@ -22,7 +42,7 @@ module Api
 
             private
             def category_param
-                params.permit(:name, :attachment)
+                params.permit(:name,  :attachment)
             end
         end
     end
