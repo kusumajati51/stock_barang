@@ -28,6 +28,9 @@ gem 'jwt_sessions'
 
 gem 'validates_email_format_of'
 
+gem 'rack-cors'
+
+
 gem 'rubocop', require: false
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
