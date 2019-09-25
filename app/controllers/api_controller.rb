@@ -1,7 +1,7 @@
 class ApiController < ActionController::API
     include JWTSessions::RailsAuthorization
     rescue_from JWTSessions::Errors::Unauthorized, with: :not_authorized
-    rescue_from AbstractController::ActionNotFound, with: :wrong_route 
+    rescue_from AbstractController::ActionNotFound, with: :wrong_route
     
     private 
     def current_user
@@ -14,5 +14,5 @@ class ApiController < ActionController::API
 
     def wrong_route
         render json: {error: "Not found function"}
-    end    
+    end
 end

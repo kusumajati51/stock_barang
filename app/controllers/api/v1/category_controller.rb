@@ -21,7 +21,7 @@ module Api
                 @catergories.each do |category|
                     data = {id: category.id ,name: category.name}
                 @item.push(data)
-                
+
                 end
                 
                 @response = {status: 1, data: @item}
