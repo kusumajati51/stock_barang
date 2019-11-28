@@ -10,14 +10,12 @@ module StockBarang
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
-    config.web_console.whitelisted_ips = '192.168.43.224'
-    config.action_dispatch.rescue_responses["ActionController::RoutingError"] =:wrong_route
     # config.api_only = true
 
     config.middleware.insert_before 0, Rack::Cors do
       allow do
         origins '*'
-        resource '*', :headers => :any, :methods => [:get, :post, :options]
+        resource '*', headers: :any, methods: %i[get post options]
       end
     end
 

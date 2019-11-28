@@ -1,4 +1,5 @@
 class Category < ApplicationRecord
-  has_many :products
+  mount_uploader :attachment, AttachmentUploader
+  has_many :items, dependent: :destroy
   belongs_to :user
 end

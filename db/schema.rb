@@ -10,10 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_17_115238) do
+ActiveRecord::Schema.define(version: 2019_10_16_141413) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.string "name"
+    t.string "name_category"
     t.string "attachment"
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
@@ -21,8 +21,8 @@ ActiveRecord::Schema.define(version: 2019_09_17_115238) do
     t.index ["user_id"], name: "index_categories_on_user_id"
   end
 
-  create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.string "name"
+  create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.string "name_items"
     t.bigint "category_id"
     t.integer "price"
     t.string "product_picture"
@@ -33,8 +33,20 @@ ActiveRecord::Schema.define(version: 2019_09_17_115238) do
     t.integer "check_in"
     t.integer "check_out"
     t.integer "stock"
-    t.index ["category_id"], name: "index_products_on_category_id"
-    t.index ["user_id"], name: "index_products_on_user_id"
+    t.index ["category_id"], name: "index_items_on_category_id"
+    t.index ["user_id"], name: "index_items_on_user_id"
+  end
+
+  create_table "orders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.string "transaction_code"
+    t.integer "sold"
+    t.integer "price"
+    t.bigint "item_id"
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["item_id"], name: "index_orders_on_item_id"
+    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
@@ -47,6 +59,8 @@ ActiveRecord::Schema.define(version: 2019_09_17_115238) do
   end
 
   add_foreign_key "categories", "users"
-  add_foreign_key "products", "categories"
-  add_foreign_key "products", "users"
+  add_foreign_key "items", "categories"
+  add_foreign_key "items", "users"
+  add_foreign_key "orders", "items"
+  add_foreign_key "orders", "users"
 end
