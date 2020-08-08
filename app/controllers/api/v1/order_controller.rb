@@ -21,11 +21,6 @@ module Api
         else
           render json: @order.errors
         end
-        # unless(@sold.to_i > @inventory.stock)
-        # else
-        #   render json: {error: "this item is not enough"}
-        # end
-
       end
 
       def multi_order
