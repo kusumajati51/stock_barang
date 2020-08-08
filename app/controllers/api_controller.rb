@@ -10,11 +10,13 @@ class ApiController < ActionController::API
     end
 
     def not_authorized
-        render json: { status: 0, error: "Not authorized" }
-        
+        render json: { status: 0, error: "Not authorized" }, status: 401
+
     end
 
     def wrong_route
-        render json: {error: "Not found function"}
+        render json: {error: "Not found function"}, status: 300
+
+
     end
 end

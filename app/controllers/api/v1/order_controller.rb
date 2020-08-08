@@ -12,39 +12,49 @@ module Api
 
       def create
         @items = current_user.items.find_by(id: params[:id])
-        @sold = params.permit(:sold)
-        @price = @items.price.to_i * @sold[:sold].to_i
-        @order = current_user.order.new(sold: @sold[:sold].to_i, price: @price, item_id: params[:id])
-        @stock = @items.stock - @sold[:sold].to_i
-        @check_out = @items.check_out + @sold[:sold].to_i
-        if(@sold[:sold].to_i < @items.stock)
-          @items.update(check_out: @check_out, stock: @stock)
-          if @order.save
-            render json: @order
-          else
-            render json: { user: current_user,item: @items, error: @order.errors }
-          end
+        @variant = @items.variant_sizes.find_by(id: params[:variant_id])
+        @sold = params[:sold]
+        @price = @variant.sell_price.to_i * @sold.to_i
+        @order = @items.order.new(sold: @sold.to_i, price: @price)
+        if @order.save
+          render json: @order
         else
-          render json: {error: "this item is not enough"}
+          render json: @order.errors
         end
+        # unless(@sold.to_i > @inventory.stock)
+        # else
+        #   render json: {error: "this item is not enough"}
+        # end
+
       end
 
       def multi_order
+        @check_errors = []
         @items = current_user.items
-        @show_data ||= []
-        @params = params[:_json].each do |c|
-          item = @items.find_by(id: c[:id])
-          sold = c[:sold].to_i
-          price = item.price * sold
-          stock = item.check_out - sold
-          check_out = item.check_out + sold
-          item.update(check_out: check_out, stock: stock)
-          order = current_user.order.new(sold: sold, price: price, item_id: c[:id])
-          order.save
-          @show_data.push(item: item, order: order)
-
+        @param = multi_order_param
+        @orders = []
+        @param.each_with_index do |p, index|
+           check_valid = {}
+           item = @items.find(p[:id])
+           variant_size = item.variant_sizes.find_by(id: p[:variant_id])
+           sold = p[:sold]
+           price = variant_size.sell_price.to_i - @sold.to_i
+           order = item.order.new(sold: sold.to_i, price: price)
+           @orders.push(order)
+           unless order.valid?
+              order.errors.each do |attribute, error|
+                check_valid[attribute] = error
+                check_valid[:index] = index
+                @check_errors.push(check_valid)
+              end
+           end
         end
-        render json: @show_data
+        unless @check_errors.empty?
+          render json: @check_errors
+        else
+          @orders.each(&:save)
+          render json: @orders
+        end
       end
 
 
@@ -53,6 +63,11 @@ module Api
 
       def order_param
         params.permit(:sold, :price,:item_id)
+      end
+
+      def multi_order_param
+         params.permit(_json: [:sold, :variant_id,:item_id])
+         params[:_json]
       end
 
     end

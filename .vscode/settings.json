@@ -1,4 +1,5 @@
 {
     "git.autofetch": true,
-    "extensions.showRecommendationsOnlyOnDemand": true
+    "extensions.showRecommendationsOnlyOnDemand": true,
+    "ruby.intellisense": "rubyLocate"
 }

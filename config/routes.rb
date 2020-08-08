@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
       get '/item/index', to: 'item#index'
       get '/category/index/menu', to: 'item#index'
+      get 'item/show/:id', to: 'item#show'
 
       get '/category/index/spinner', to: 'category#spinner_category'
       get 'category/index/all', to: 'category#liston'
@@ -18,6 +19,10 @@ Rails.application.routes.draw do
       post '/category/baru', to: 'category#create'
       post '/order/baru', to: 'order#create'
       post '/order/multi', to: 'order#multi_order'
+
+      post '/create/variant', to: 'inventory#create_variant_name'
+      post '/create/inventory', to: 'inventory#create_inventory'
+
     end
   end
 

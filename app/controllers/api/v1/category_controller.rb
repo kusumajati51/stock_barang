@@ -48,7 +48,7 @@ module Api
 
             private
             def category_param
-                params.permit(:name,  :attachment)
+                params.permit(:name_category, :attachment)
             end
         end
     end
