@@ -1,9 +1,9 @@
 class User < ApplicationRecord
   has_secure_password
   has_many :products
-  has_many :category
-  validates_associated :category
-  has_many :items
+  has_many :categories
+  validates_associated :categories
+  has_many :items, :through => :categories
   has_many :brands
   has_many :orders
   validates_associated :items

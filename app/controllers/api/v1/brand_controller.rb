@@ -23,7 +23,7 @@ module Api
                 @check_errors =[]
                 @brands = []
                 @params.each_with_index do |p, index|
-                    brand = current_user.brands.new(category_id: p[:category_id],name: p[:name],company: p[:company])
+                    brand = current_user.brands.new(name: p[:name],company: p[:company])
                     check_error = {}
                     @brands.push(brand)
                     unless brand.valid?
@@ -47,11 +47,11 @@ module Api
             
             private
             def brand_param
-                params.permit(:category_id, :name, :company)
+                params.permit(:name, :company)
             end
 
             def multi_brand_param
-                params.permit(_json: [:category_id, :name, :company])
+                params.permit(_json: [:name, :company])
                 params[:_json]
             end
         end

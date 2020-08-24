@@ -13,11 +13,16 @@ module Api
         @variant = @items.variant_sizes.find_by(id: params[:variant_id])
         @sold = params[:sold]
         @price = @variant.sell_price.to_i * @sold.to_i
-        @transaction = @items.sales_transactions.new(transaction_type: 1, user_id: current_user.id)
-        @transaction.save
-        @order = @transaction.order.new(item_id: @items.id, sold: @sold.to_i, price: @price, user_id: current_user.id)
-        if @order.save && @transaction.save
-          render json: @order
+        @transaction = @items.sales_transactions.new(transaction_type: 1)
+        if @transaction.valid?
+          @transaction.save
+          @order = @transaction.create_order( sold: @sold, price: @price, variant_size_id: @variant.id)
+          if !@order.valid?
+            @order.save
+            render json: @order.errors
+          else
+            render json: @order
+          end
         else
           @data_error = []
           @data_error.push(@transaction.errors)

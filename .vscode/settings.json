@@ -1,5 +1,6 @@
 {
     "git.autofetch": true,
     "extensions.showRecommendationsOnlyOnDemand": true,
-    "ruby.intellisense": "rubyLocate"
+    "ruby.intellisense": "rubyLocate",
+    "vue3snippets.enable-compile-vue-file-on-did-save-code": true
 }

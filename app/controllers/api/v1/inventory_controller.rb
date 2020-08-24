@@ -4,7 +4,7 @@ module Api
         before_action :authorize_access_request!
 
         def create_inventory
-          @item = current_user.items.find(param_inventory[:item_id])
+          @item = current_user.items
           render json: @item
         rescue ActiveRecord::RecordNotSaved => e
           render json: { status: 0 ,message: e.to_s}, status: 422

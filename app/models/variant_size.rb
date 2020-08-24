@@ -1,10 +1,10 @@
 class VariantSize < ApplicationRecord
     has_many :minimum_sizes, dependent: :destroy
     has_many :inventories, through: :minimum_sizes
+    has_many :order
     belongs_to :item
     after_create :init
     validates_associated :item
-    
     validates :variant_name, presence: true
     # validates_with VariantSizeValidator, :attribute=>[:variant_name]
     def init

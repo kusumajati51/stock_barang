@@ -4,7 +4,7 @@ module Api
             before_action :authorize_access_request!, only: [:index, :spinner_category, :create]
 
             def index
-                @catergories = current_user.category.all
+                @catergories = current_user.categories.all
                 @item ||=[]
                 @catergories.each do |category|
                     data = {id: category.id ,name: category.name,
@@ -16,7 +16,7 @@ module Api
             end
 
             def spinner_category
-                @catergories = current_user.category.all
+                @catergories = current_user.categories.all
                 @item ||=[]
                 @catergories.each do |category|
                     data = {id: category.id ,name: category.name_category}
@@ -34,7 +34,7 @@ module Api
             end
 
             def create
-                category = current_user.category.new(category_param)
+                category = current_user.categories.new(category_param)
                 category.save  
                 if category.save                
                     render json: category

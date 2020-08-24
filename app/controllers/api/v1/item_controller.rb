@@ -26,7 +26,7 @@ module Api
       end
 
       def create
-        @item = current_user.items.new(product_param)
+        @item = Item.new(product_param)
         if @item.save
           @variant = @item.variant_sizes.new(param_variant)
           if@variant.save
