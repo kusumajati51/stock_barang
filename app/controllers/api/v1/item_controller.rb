@@ -60,7 +60,7 @@ module Api
       private
 
       def product_param
-        params.permit(:name_items, :category_id, :product_picture)
+        params.permit(:name_items, :category_id, :product_picture, :brand_id)
       end
 
       def param_variant

@@ -5,7 +5,7 @@ module Api
     class LoginController < ApiController
       def create
         if params[:email].nil? || params[:email].empty?
-          render json: { message: 'email anda kosong' }
+          render json: { message: 'email anda kosong' }, status: :bad_request
         else
           user = User.find_by!(email: params[:email])
           if user&.authenticate(params[:password])
@@ -14,8 +14,8 @@ module Api
             tokens = session.login
             response.set_cookie(JWTSessions.access_cookie,
                                 value: tokens[:access], httponly: true, secure: Rails.env.production?)
-            data_login = { token: tokens[:access], nama: user.name, email: user.email, no_hp: user.no_hp }
-            render json: { status: 1, message: 'Berhasil Mendaftar', data: data_login }
+            data_login = { token: tokens[:access], nama: user.name, email: user.email, no_hp: user.no_hp, csrf: tokens[:csrf] }
+            render json: { status: 1, message: 'Login Succes', data: data_login }
           else
             not_found
           end

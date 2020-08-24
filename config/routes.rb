@@ -23,6 +23,10 @@ Rails.application.routes.draw do
       post '/create/variant', to: 'inventory#create_variant_name'
       post '/create/inventory', to: 'inventory#create_inventory'
 
+      post '/create/brand', to: 'brand#create_brand'
+      post '/multi/create/brand', to: 'brand#multi_create_brand'
+
+
     end
   end
 

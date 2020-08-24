@@ -5,37 +5,19 @@ module Api
 
         def create_inventory
           @item = current_user.items.find(param_inventory[:item_id])
-          @variant = @item.variant_sizes.find(param_inventory[:variant_size_id])
-          # render json: @variant
-          @param = {}
-          @response  = JSON.parse('{"status": "1"}')
-          @param[:item_id] = param_inventory[:item_id]
-          @param[:stock] = param_inventory[:stock]
-          @param[:check_in] = param_inventory[:check_in]
-          @inventory = @item.create_inventory(@param)
-          if @inventory.save
-            puts @response["data"] => @inventory.to_json
-            @minimum = MinimumSize.create!(inventory: @inventory, variant_size: @variant)
-            if@minimum.save
-              render json: @inventory.to_json(:include => :minimum_sizes)
-            else
-              render json: { error: @minimum.errors, param:@param_minimun }, status: 400
-            end
-          else
-            render json: { error: @inventory.errors }, status: 400
-          end
+          render json: @item
         rescue ActiveRecord::RecordNotSaved => e
           render json: { status: 0 ,message: e.to_s}, status: 422
         end
 
         def create_variant_name
           @param = param_variant[:variant_size]
-          @param.each do |p|
+          @param.each_with_index do |p, index|
               variant = VariantSize.new(p)
               if !variant.valid?
                 variant.errors.each do |attribute, error|
                   @check_errors[attribute] = error
-                  @check_errors[:index] = @param.find_index(p)
+                  @check_errors[:index] = index
                 end
               end
           end
@@ -67,7 +49,7 @@ module Api
           end
 
           def param_inventory
-            params.require(:inventory).permit(:item_id, :stock, :check_in, :variant_size_id)
+            params.permit(:item_id, :stock, :check_in, :variant_size_id)
           end
 
         
