@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.5.5'
+ruby '2.7.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 6.0.2'
+gem 'rails', '~> 6.0.3'
 # Use mysql as the database for Active Record
 gem 'mysql2', '>= 0.5.2'
 # Use Puma as the app server
@@ -32,7 +32,14 @@ gem 'rack-cors'
 
 gem  'ripper-tags'
 
+gem 'money-rails', '~>1.12'
+
+gem 'monetize'
+
 gem 'rubocop', require: false
+
+gem 'therubyracer',  platforms: :ruby
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
@@ -60,4 +67,4 @@ group :test do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+# gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

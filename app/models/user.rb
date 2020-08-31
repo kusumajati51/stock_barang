@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_many :items, :through => :categories
   has_many :brands
   has_many :orders
+  has_many :sales_invoices
   validates_associated :items
   PASSWORD_REQUIREMENTS = /\A(?=.{8,})(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W)/x
   VALID_EMAIL_REGEX = /\A([\w+\-]\.?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i

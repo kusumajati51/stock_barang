@@ -9,26 +9,27 @@ module Api
       end
 
       def create
-        @items = current_user.items.find_by(id: params[:id])
-        @variant = @items.variant_sizes.find_by(id: params[:variant_id])
-        @sold = params[:sold]
-        @price = @variant.sell_price.to_i * @sold.to_i
-        @transaction = @items.sales_transactions.new(transaction_type: 1)
-        if @transaction.valid?
-          @transaction.save
-          @order = @transaction.create_order( sold: @sold, price: @price, variant_size_id: @variant.id)
-          if !@order.valid?
-            @order.save
-            render json: @order.errors
+          @items = current_user.items.find_by(id: params[:id])
+          @total = 0;
+          @variant = @items.variant_sizes.find_by(id: params[:variant_id])
+          @sold = params[:sold]
+          @price = @variant.sell_price_cents.to_i * @sold.to_i
+          @total += @price
+          @transaction = current_user.sales_invoices.build(transaction_type: 1)
+          order = Order.new(sold: @sold, order_price_cents: @total , variant_size_id: @variant.id)
+          @transaction.total_transaction_cents = @total
+          @transaction.orders << order
+          if @transaction.save
+            render json: @transaction.orders
           else
-            render json: @order
+            errors = {}
+            @transaction.errors.each do |attr, msg|
+              if(msg != "is invalid")
+                errors[attr] = msg
+              end
+            end
+            render json: {error: errors, price: @price}
           end
-        else
-          @data_error = []
-          @data_error.push(@transaction.errors)
-          @data_error.push(@order.errors)
-          render json: @data_error, status: 422
-        end
       end
 
       def multi_order
@@ -36,52 +37,41 @@ module Api
         @items = current_user.items
         @param = multi_order_param
         @orders = []
-        @transactions = []
-        @param.each_with_index do |p, index|
-           check_valid = {}
-           item = @items.find(p[:id])
-           variant_size = item.variant_sizes.find_by(id: p[:variant_id])
-           sold = p[:sold]
-           price = variant_size.sell_price.to_i * @sold.to_i
-           transaction = item.sales_transactions.new(transaction_type: 1, user_id: current_user.id)
-           @transactions.push(transaction)
-           unless transaction.valid?
-            transaction.errors.each do |attribute, error|
-              check_valid[attribute] = error
-              check_valid[:index] = index
-              @check_errors.push(check_valid)
-            end
-           else
-            order = transaction.order.new( user_id: current_user.id, item_id: item.id,sold: sold.to_i, price: price)
-            @orders.push(order)
-            unless order.valid?
-              order.errors.each do |attribute, error|
-                check_valid[attribute] = error
-                check_valid[:index] = index
-                @check_errors.push(check_valid)
-              end
-            end
-           end
-           
+        @total = 0;
+        @transactions = current_user.sales_invoices.build(transaction_type: 1)
+        @param.each do |p|
+          variant_size = VariantSize.find(p[:variant_id])
+          sold = p[:sold]
+          price = variant_size.sell_price.to_i * @sold.to_i 
+          @total += price
+          order = Order.new(sold: sold, order_price_cents: price, variant_size_id: variant_size.id)
+          @transactions.orders << order
         end
-        unless @check_errors.empty?
-          render json: @check_errors, status: 442
+        @transactions.total_transaction_cents = @total
+        puts(@total)
+        if @transactions.save
+          render json: @transactions.orders
         else
-          @orders.each(&:save)
-          render json: @orders
+          @transactions.orders.each_with_index do | order, index|
+              check_valid = {}
+              order.errors.each do |attr, msg|
+                check_valid[attr] = msg
+              end
+              check_valid[:index] = index
+              unless order.valid?
+                @check_errors.push(check_valid)
+              end 
+            end
+          render json: @check_errors, status: 442
         end
-      end
+      end 
 
 
 
       private
 
-      def order_param
-        params.permit(:sold, :price,:item_id)
-      end
-
       def multi_order_param
-         params.permit(_json: [:sold, :variant_id,:item_id])
+         params.permit(_json: [:sold, :variant_id])
          params[:_json]
       end
 

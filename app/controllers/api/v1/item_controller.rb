@@ -12,7 +12,8 @@ module Api
                             check_in: inventory.check_in}
           data = { name: product.name_items,
                    url: product.product_picture.url,
-                   inventory: data_invetory }
+                   inventory: data_invetory,
+                   variant: product.variant_sizes}
           @item.push(data)
         end
         render json: {status: 1, data: @item}
@@ -26,49 +27,46 @@ module Api
       end
 
       def create
-        @item = Item.new(product_param)
+        @param_i = param_inventory;
+        @item = current_user.items.build(product_param)
+        @variant = @item.variant_sizes.build(param_variant)
+        @inventory = @item.build_inventory(param_inventory)
+        @variant.inventories << @inventory
         if @item.save
-          @variant = @item.variant_sizes.new(param_variant)
-          if@variant.save
-            @inventory = @item.create_inventory
-            if(@inventory.save)
-              @minimum = MinimumSize.create!(inventory: @inventory, variant_size: @variant)
-              if @minimum.save
-                data_invetory = {stock: @inventory.stock,
-                                 check_in: @inventory.check_in}
-                data_variant = { variant_name: @variant.variant_name, 
-                                 buy_price: @variant.buy_price,
-                                 sell_price: @variant.sell_price,
-                                 qty_size: @variant.qty_size}
-                data = { name: @item.name_items,
-                   url: @item.product_picture.url,
-                   minimum_variant_sizes: data_variant,
-                   inventory: data_invetory } 
-                render json: {status: 1, data: data}
-              else
-                render json: @minimum.errors
-              end
-            end
-          else
-            render json: @variant.errors
-          end          
-        else
-          render json: { error: @item.errors }
+          data_invetory = {stock: @inventory.stock, check_in: @inventory.check_in}
+          data_variant = { variant_name: @variant.variant_name, sell_price_cents: @variant.sell_price_cents,
+            qty_size: @variant.qty_size}
+          data = { name: @item.name_items, url: @item.product_picture.url, minimum_variant_sizes: data_variant,
+            inventory: data_invetory } 
+          render json: {status: 1, data: data}
+        else 
+          data_eror = {}
+
+          @item.errors.each do |attr, message|
+            data_eror[attr] = "#{attr} #{message}"
+          end
+          @variant.errors.each do |attr, message|
+            data_eror[attr] = "#{attr} #{message}"
+          end
+          @inventory.errors.each do |attr, message|
+            data_eror[attr] = "#{attr} #{message}"
+          end
+          render json: {status: 0, data: data_eror}, status: 422
         end
       end
 
-      private
+      private 
 
       def product_param
         params.permit(:name_items, :category_id, :product_picture, :brand_id)
       end
 
       def param_variant
-        params.permit(:variant_name, :sell_price, :buy_price, :qty_size)
+        params.permit(:variant_name, :sell_price_cents, :qty_size)
       end
 
       def param_inventory
-        params.permit(:stock, :check_in)
+        params.permit( :check_in)
       end
 
     end

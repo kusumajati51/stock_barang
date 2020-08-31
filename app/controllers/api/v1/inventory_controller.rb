@@ -4,14 +4,23 @@ module Api
         before_action :authorize_access_request!
 
         def create_inventory
-          @item = current_user.items
-          render json: @item
+          @param = param_inventory
+          @variants = VariantSize.find(@param[:variant_size_id])
+          @item = current_user.items.find(@variants.id)
+          @transaction = current_user.sales_invoices.build(transaction_type: 2)
+          total =@param[:buy_price_cents] * @param[:total_item]
+          @transaction.check_in_items.new(total_item: @param[:total_item], buy_price_cents: @param[:buy_price_cents], variant_size_id: @variants.id)
+          @transaction.total_transaction_cents = total
+          
+          @transaction.save
+          render json: { g: @transaction, d: @transaction.check_in_items ,e: @transaction.errors}
         rescue ActiveRecord::RecordNotSaved => e
           render json: { status: 0 ,message: e.to_s}, status: 422
         end
 
         def create_variant_name
           @param = param_variant[:variant_size]
+          @check_errors = {}
           @param.each_with_index do |p, index|
               variant = VariantSize.new(p)
               if !variant.valid?
@@ -45,14 +54,13 @@ module Api
         private
           def param_variant
             #  params.require(:variant_size).permit(:variant_name, :sell_price, :buy_price, :qty_size, :item_id)
-             params.permit(variant_size: [:variant_name, :sell_price, :buy_price, :qty_size,:item_id])
+             params.permit(variant_size: [:variant_name, :sell_price_cents, :qty_size,:item_id])
           end
 
           def param_inventory
-            params.permit(:item_id, :stock, :check_in, :variant_size_id)
+            params.permit(:total_item, :variant_size_id, :buy_price_cents)
           end
 
-        
     end
   end
 end
