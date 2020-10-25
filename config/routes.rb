@@ -21,6 +21,7 @@ Rails.application.routes.draw do
       post '/order/multi', to: 'order#multi_order'
 
       post '/create/variant', to: 'inventory#create_variant_name'
+      get '/variant/:id', to: 'inventory#get_data_variant'
       post '/create/inventory', to: 'inventory#create_inventory'
 
       post '/create/brand', to: 'brand#create_brand'

@@ -6,16 +6,25 @@ module Api
         def create_inventory
           @param = param_inventory
           @variants = VariantSize.find(@param[:variant_size_id])
-          @item = current_user.items.find(@variants.id)
+          @item = current_user.items.find(@variants.item_id)
           @transaction = current_user.sales_invoices.build(transaction_type: 2)
-          total =@param[:buy_price_cents] * @param[:total_item]
-          @transaction.check_in_items.new(total_item: @param[:total_item], buy_price_cents: @param[:buy_price_cents], variant_size_id: @variants.id)
+          total =@param[:buy_price_cents].to_i * @param[:total_item].to_i
+          total_pieces = @variants.qty_size.to_i * @param[:total_item].to_i
+          @transaction.check_in_items.new(total_item: @param[:total_item], buy_price_cents: @param[:buy_price_cents], 
+            variant_size_id: @variants.id, total_pieces: total_pieces)
           @transaction.total_transaction_cents = total
-          
           @transaction.save
-          render json: { g: @transaction, d: @transaction.check_in_items ,e: @transaction.errors}
+          render json: { status: 1, message: "Success add inventory", data: @transaction}
         rescue ActiveRecord::RecordNotSaved => e
           render json: { status: 0 ,message: e.to_s}, status: 422
+        rescue ActiveRecord::RecordNotFound => e
+          render json: { status: 0 ,message: e.to_s}, status: 422
+        end
+
+        def get_data_variant
+          @items = current_user.items.find(params[:id])
+          @variants = @items.variant_sizes
+          render json: @variants
         end
 
         def create_variant_name

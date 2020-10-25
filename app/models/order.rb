@@ -21,7 +21,7 @@ class Order < ApplicationRecord
   def decrease_inventory
     @item = Item.find(variant_size.item_id)
     @inventory = @item.inventory
-    total = @inventory.stock - self.sold
+    total = @inventory.stock- self.sold
     check_out = @inventory.check_out + self.sold
     @inventory.update(stock: total, check_out: check_out)
   end

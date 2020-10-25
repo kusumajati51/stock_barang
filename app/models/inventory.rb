@@ -7,8 +7,8 @@ class Inventory < ApplicationRecord
     def init
         if self.check_in == 0
             self.check_in = 0
-            self.check_out = 0
         end
+        self.check_out = 0
         self.stock = self.check_in
         # self.released_on = Date.today
     end

@@ -17,14 +17,18 @@ module Api
 
             def spinner_category
                 @catergories = current_user.categories.all
-                @item ||=[]
+                @catergoryData ||=[]
+                @brandData ||= []
                 @catergories.each do |category|
-                    data = {id: category.id ,name: category.name_category}
-                @item.push(data)
-
+                    data = {id: category.id ,name: category.name_category, pictures: category.attachment.url}
+                    @catergoryData.push(data)
                 end
-                
-                @response = {status: 1, data: @item}
+                @brands = current_user.brands
+                @brands.each do |brand|
+                    dataBrand = {id: brand.id ,name: brand.name}
+                    @brandData.push(dataBrand)
+                end
+                @response = {status: 1, category: @catergoryData, brand: @brandData}
                 render json: @response
             end
 

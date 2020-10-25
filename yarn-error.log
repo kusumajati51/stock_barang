@@ -2,10 +2,10 @@ Arguments:
   /usr/bin/node /usr/share/yarn/bin/yarn.js check --verify-tree
 
 PATH: 
-  /var/lib/gems/2.5.0/bin:/home/kusumajati/.sdkman/candidates/springboot/current/bin:/home/kusumajati/.local/bin:/opt/gradle/gradle-5.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/kusumajati/.rvm/bin
+  /var/lib/gems/2.7.0/bin:/home/kusumajati/.composer/vendor/bin:/home/kusumajati/.local/bin:/home/kusumajati/.sdkman/candidates/springboot/current/bin:/opt/gradle/gradle-5.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/kusumajati/.rvm/bin
 
 Yarn version: 
-  1.22.4
+  1.22.5
 
 Node version: 
   10.19.0
@@ -22,9 +22,9 @@ Trace:
       at doWrite (_stream_writable.js:415:12)
       at writeOrBuffer (_stream_writable.js:399:5)
       at Socket.Writable.write (_stream_writable.js:299:11)
-      at ConsoleReporter.warn (/usr/share/yarn/lib/cli.js:96791:17)
-      at warn (/usr/share/yarn/lib/cli.js:51520:23)
-      at /usr/share/yarn/lib/cli.js:100624:7
+      at ConsoleReporter.warn (/usr/share/yarn/lib/cli.js:96792:17)
+      at warn (/usr/share/yarn/lib/cli.js:51521:23)
+      at /usr/share/yarn/lib/cli.js:100625:7
 
 npm manifest: 
   {

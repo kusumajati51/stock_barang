@@ -1,19 +1,20 @@
 module Api
   module V1
     class ItemController < ApiController
-      before_action :authorize_access_request!
+      before_action :authorize_access_request!  
 
       def index
         @products = current_user.items.all
         @item ||= []
         @products.each do |product|
           inventory = product.inventory
-          data_invetory = { stock: inventory.stock,
-                            check_in: inventory.check_in}
-          data = { name: product.name_items,
-                   url: product.product_picture.url,
-                   inventory: data_invetory,
-                   variant: product.variant_sizes}
+          data = { id:   product.id,
+                   name: product.name_items,
+                   url: "http://#{request.host}:#{request.port}#{ + product.product_picture_url}",
+                   check_in: inventory.check_in,
+                   stock: inventory.stock,
+                   check_out: inventory.check_out,
+                   variant: product.variant_sizes }
           @item.push(data)
         end
         render json: {status: 1, data: @item}

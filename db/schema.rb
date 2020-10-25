@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_29_181054) do
+ActiveRecord::Schema.define(version: 2020_09_09_095847) do
 
   create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 2020_08_29_181054) do
     t.bigint "sales_invoice_id"
     t.integer "buy_price_cents", default: 0
     t.string "buy_price_currency", default: "IDR", null: false
+    t.integer "total_pieces"
     t.index ["sales_invoice_id"], name: "index_check_in_items_on_sales_invoice_id"
     t.index ["variant_size_id"], name: "index_check_in_items_on_variant_size_id"
   end
@@ -78,6 +79,7 @@ ActiveRecord::Schema.define(version: 2020_08_29_181054) do
     t.bigint "sales_invoice_id"
     t.integer "order_price_cents", default: 0
     t.string "order_price_currency", default: "IDR", null: false
+    t.integer "total_pieces"
     t.index ["sales_invoice_id"], name: "index_orders_on_sales_invoice_id"
     t.index ["variant_size_id"], name: "index_orders_on_variant_size_id"
   end
