@@ -57,8 +57,11 @@ module Api
               render json: @errors
             end
           end
+        end
+        def dashboard_item_in
           
         end
+        
 
         private
           def param_variant

@@ -5,7 +5,7 @@ module Api
 
             def index
                 @brands = current_user.brands.all
-                render json: @brands
+                render json: {status: 1, messages: :ok ,data: @brands}
             end
 
             def create_brand

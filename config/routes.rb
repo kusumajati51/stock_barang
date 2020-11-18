@@ -11,6 +11,7 @@ Rails.application.routes.draw do
       get 'item/show/:id', to: 'item#show'
 
       get '/category/index/spinner', to: 'category#spinner_category'
+      get '/category/show/all', to: 'category#show_all_category'
       get 'category/index/all', to: 'category#liston'
       get '/category/list', to: 'category#index'
       get '/order/list', to: 'order#index'
@@ -26,7 +27,9 @@ Rails.application.routes.draw do
 
       post '/create/brand', to: 'brand#create_brand'
       post '/multi/create/brand', to: 'brand#multi_create_brand'
+      get '/brand/index', to: 'brand#index'
 
+      get '/dashboard/order', to: 'order#show_dashboard'
 
     end
   end
