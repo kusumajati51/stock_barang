@@ -12,7 +12,11 @@
 
 ActiveRecord::Schema.define(version: 2020_09_09_095847) do
 
+<<<<<<< HEAD
   create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+=======
+  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+>>>>>>> 2a41df35fcf09e349685b77186d3df4b8ed28f30
     t.string "name"
     t.string "company"
     t.bigint "user_id", null: false
@@ -21,9 +25,17 @@ ActiveRecord::Schema.define(version: 2020_09_09_095847) do
     t.index ["user_id"], name: "index_brands_on_user_id"
   end
 
+<<<<<<< HEAD
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name_category"
     t.string "attachment"
+=======
+  create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "name"
+    t.bigint "category_id"
+    t.integer "price"
+    t.date "released_on"
+>>>>>>> 2a41df35fcf09e349685b77186d3df4b8ed28f30
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -84,6 +96,7 @@ ActiveRecord::Schema.define(version: 2020_09_09_095847) do
     t.index ["variant_size_id"], name: "index_orders_on_variant_size_id"
   end
 
+<<<<<<< HEAD
   create_table "sales_invoices", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "transaction_code"
     t.integer "transaction_type"
@@ -95,6 +108,8 @@ ActiveRecord::Schema.define(version: 2020_09_09_095847) do
     t.index ["user_id"], name: "index_sales_invoices_on_user_id"
   end
 
+=======
+>>>>>>> 2a41df35fcf09e349685b77186d3df4b8ed28f30
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "email"
     t.string "password_digest"
