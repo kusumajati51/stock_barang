@@ -36,6 +36,8 @@ gem 'money-rails', '~>1.12'
 
 gem 'monetize'
 
+gem 'seed_dump'
+
 gem 'rubocop', require: false
 
 gem 'therubyracer',  platforms: :ruby
