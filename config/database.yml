@@ -50,6 +50,6 @@ test:
 production:
   <<: *default
   url:  mysql://bb9b82bc781bfa:24c88f2f@us-cdbr-east-02.cleardb.com/heroku_1c4c48675828bbb?reconnect=true
-  database: stock_barang_production
-  username: root
-  password: 
+  # database: stock_barang_production
+  # username: root
+  # password: 
