@@ -43,35 +43,69 @@ Order.create!([
   {sold: 12, variant_size_id: 2, sales_invoice_id: 66, order_price_cents: 12000, order_price_currency: "IDR", total_pieces: 96},
   {sold: 50, variant_size_id: 1, sales_invoice_id: 66, order_price_cents: 50000, order_price_currency: "IDR", total_pieces: 50},
   {sold: 12, variant_size_id: 2, sales_invoice_id: 67, order_price_cents: 12000, order_price_currency: "IDR", total_pieces: 96},
-  {sold: 50, variant_size_id: 1, sales_invoice_id: 67, order_price_cents: 50000, order_price_currency: "IDR", total_pieces: 50}
+  {sold: 50, variant_size_id: 1, sales_invoice_id: 67, order_price_cents: 50000, order_price_currency: "IDR", total_pieces: 50},
+  {sold: 12, variant_size_id: 14, sales_invoice_id: 70, order_price_cents: 14400, order_price_currency: "IDR", total_pieces: 12},
+  {sold: 20, variant_size_id: 2, sales_invoice_id: 91, order_price_cents: 20000, order_price_currency: "IDR", total_pieces: 160},
+  {sold: 2, variant_size_id: 11, sales_invoice_id: 92, order_price_cents: 42000, order_price_currency: "IDR", total_pieces: 32},
+  {sold: 2, variant_size_id: 3, sales_invoice_id: 92, order_price_cents: 2000, order_price_currency: "IDR", total_pieces: 16},
+  {sold: 12, variant_size_id: 6, sales_invoice_id: 92, order_price_cents: 12000, order_price_currency: "IDR", total_pieces: 12},
+  {sold: 12, variant_size_id: 14, sales_invoice_id: 92, order_price_cents: 14400, order_price_currency: "IDR", total_pieces: 12},
+  {sold: 12, variant_size_id: 9, sales_invoice_id: 92, order_price_cents: 12000, order_price_currency: "IDR", total_pieces: 12},
+  {sold: 12, variant_size_id: 14, sales_invoice_id: 92, order_price_cents: 14400, order_price_currency: "IDR", total_pieces: 12},
+  {sold: 12, variant_size_id: 8, sales_invoice_id: 92, order_price_cents: 22800, order_price_currency: "IDR", total_pieces: 12}
 ])
 SalesInvoice.create!([
-  {transaction_code: "11202020-JY6BPE", transaction_type: 1, user_id: 1, total_transaction_cents: 22000, total_transaction_currency: "IDR"},
-  {transaction_code: "11202020-S6PJYN", transaction_type: 1, user_id: 1, total_transaction_cents: 22000, total_transaction_currency: "IDR"},
-  {transaction_code: "11202020-KDG22G", transaction_type: 1, user_id: 1, total_transaction_cents: 22000, total_transaction_currency: "IDR"},
-  {transaction_code: "11202020-LXD2WG", transaction_type: 1, user_id: 1, total_transaction_cents: 22000, total_transaction_currency: "IDR"},
-  {transaction_code: "11202020-FNAMVJ", transaction_type: 1, user_id: 1, total_transaction_cents: 22000, total_transaction_currency: "IDR"},
-  {transaction_code: "11202020-1GWQFB", transaction_type: 1, user_id: 1, total_transaction_cents: 22000, total_transaction_currency: "IDR"},
-  {transaction_code: "11202020-7PBL8J", transaction_type: 1, user_id: 1, total_transaction_cents: 22000, total_transaction_currency: "IDR"},
-  {transaction_code: "11202020-DV2HEM", transaction_type: 1, user_id: 1, total_transaction_cents: 22000, total_transaction_currency: "IDR"},
-  {transaction_code: "11202020-85R12D", transaction_type: 1, user_id: 1, total_transaction_cents: 22000, total_transaction_currency: "IDR"},
-  {transaction_code: "11202020-H31OT7", transaction_type: 1, user_id: 1, total_transaction_cents: 22000, total_transaction_currency: "IDR"},
-  {transaction_code: "11202020-MPTJ9B", transaction_type: 1, user_id: 1, total_transaction_cents: 22000, total_transaction_currency: "IDR"},
-  {transaction_code: "11202020-CXMDYV", transaction_type: 1, user_id: 1, total_transaction_cents: 22000, total_transaction_currency: "IDR"},
-  {transaction_code: "11202020-62UHR2", transaction_type: 1, user_id: 1, total_transaction_cents: 116000, total_transaction_currency: "IDR"},
-  {transaction_code: "11202020-3MHDBQ", transaction_type: 1, user_id: 1, total_transaction_cents: 5000, total_transaction_currency: "IDR"},
-  {transaction_code: "11202020-N845FH", transaction_type: 2, user_id: 1, total_transaction_cents: 36000, total_transaction_currency: "IDR"},
-  {transaction_code: "11202020-5YT7EJ", transaction_type: 2, user_id: 1, total_transaction_cents: 360000, total_transaction_currency: "IDR"},
-  {transaction_code: "11202020-C7NQ3F", transaction_type: 2, user_id: 1, total_transaction_cents: 360000, total_transaction_currency: "IDR"},
-  {transaction_code: "11202020-B1UW99", transaction_type: 1, user_id: 1, total_transaction_cents: 62000, total_transaction_currency: "IDR"},
-  {transaction_code: "11202020-F0PAEM", transaction_type: 1, user_id: 1, total_transaction_cents: 62000, total_transaction_currency: "IDR"},
-  {transaction_code: "11202020-JMMKNO", transaction_type: 1, user_id: 1, total_transaction_cents: 62000, total_transaction_currency: "IDR"},
-  {transaction_code: "11202020-ZL5KUX", transaction_type: 2, user_id: 1, total_transaction_cents: 7200, total_transaction_currency: "IDR"},
-  {transaction_code: "11202020-FMM20G", transaction_type: 2, user_id: 1, total_transaction_cents: 96000, total_transaction_currency: "IDR"}
+  {transaction_code: "11282020-96T118", transaction_type: 1, user_id: 1, total_transaction_cents: 22000, total_transaction_currency: "IDR"},
+  {transaction_code: "11282020-XZJTSS", transaction_type: 1, user_id: 1, total_transaction_cents: 22000, total_transaction_currency: "IDR"},
+  {transaction_code: "11282020-B5MORN", transaction_type: 1, user_id: 1, total_transaction_cents: 22000, total_transaction_currency: "IDR"},
+  {transaction_code: "11282020-0D73MA", transaction_type: 1, user_id: 1, total_transaction_cents: 22000, total_transaction_currency: "IDR"},
+  {transaction_code: "11282020-M5FFCH", transaction_type: 1, user_id: 1, total_transaction_cents: 22000, total_transaction_currency: "IDR"},
+  {transaction_code: "11282020-5Z9JTP", transaction_type: 1, user_id: 1, total_transaction_cents: 22000, total_transaction_currency: "IDR"},
+  {transaction_code: "11282020-U8AZ7S", transaction_type: 1, user_id: 1, total_transaction_cents: 22000, total_transaction_currency: "IDR"},
+  {transaction_code: "11282020-JMFQVR", transaction_type: 1, user_id: 1, total_transaction_cents: 22000, total_transaction_currency: "IDR"},
+  {transaction_code: "11282020-UMHG5M", transaction_type: 1, user_id: 1, total_transaction_cents: 22000, total_transaction_currency: "IDR"},
+  {transaction_code: "11282020-ID6L00", transaction_type: 1, user_id: 1, total_transaction_cents: 22000, total_transaction_currency: "IDR"},
+  {transaction_code: "11282020-YWJ2LN", transaction_type: 1, user_id: 1, total_transaction_cents: 22000, total_transaction_currency: "IDR"},
+  {transaction_code: "11282020-PPZ1HQ", transaction_type: 1, user_id: 1, total_transaction_cents: 22000, total_transaction_currency: "IDR"},
+  {transaction_code: "11282020-7L5GTJ", transaction_type: 1, user_id: 1, total_transaction_cents: 116000, total_transaction_currency: "IDR"},
+  {transaction_code: "11282020-WKA68J", transaction_type: 1, user_id: 1, total_transaction_cents: 5000, total_transaction_currency: "IDR"},
+  {transaction_code: "11282020-IWY527", transaction_type: 2, user_id: 1, total_transaction_cents: 36000, total_transaction_currency: "IDR"},
+  {transaction_code: "11282020-2Q8YYP", transaction_type: 2, user_id: 1, total_transaction_cents: 360000, total_transaction_currency: "IDR"},
+  {transaction_code: "11282020-MJZKH4", transaction_type: 2, user_id: 1, total_transaction_cents: 360000, total_transaction_currency: "IDR"},
+  {transaction_code: "11282020-ZCLVKY", transaction_type: 1, user_id: 1, total_transaction_cents: 62000, total_transaction_currency: "IDR"},
+  {transaction_code: "11282020-0G33XE", transaction_type: 1, user_id: 1, total_transaction_cents: 62000, total_transaction_currency: "IDR"},
+  {transaction_code: "11282020-I1IBGS", transaction_type: 1, user_id: 1, total_transaction_cents: 62000, total_transaction_currency: "IDR"},
+  {transaction_code: "11282020-GOB1OY", transaction_type: 2, user_id: 1, total_transaction_cents: 7200, total_transaction_currency: "IDR"},
+  {transaction_code: "11282020-TFDA0P", transaction_type: 2, user_id: 1, total_transaction_cents: 96000, total_transaction_currency: "IDR"},
+  {transaction_code: "11282020-S1H2N3", transaction_type: 1, user_id: 1, total_transaction_cents: 14400, total_transaction_currency: "IDR"},
+  {transaction_code: "11282020-A7LRVL", transaction_type: 1, user_id: 1, total_transaction_cents: 0, total_transaction_currency: "IDR"},
+  {transaction_code: "11282020-POXX9J", transaction_type: 1, user_id: 1, total_transaction_cents: 0, total_transaction_currency: "IDR"},
+  {transaction_code: "11282020-ONA794", transaction_type: 1, user_id: 1, total_transaction_cents: 0, total_transaction_currency: "IDR"},
+  {transaction_code: "11282020-LJUCVX", transaction_type: 1, user_id: 1, total_transaction_cents: 0, total_transaction_currency: "IDR"},
+  {transaction_code: "11282020-71HTZC", transaction_type: 1, user_id: 1, total_transaction_cents: 0, total_transaction_currency: "IDR"},
+  {transaction_code: "11282020-385JBG", transaction_type: 1, user_id: 1, total_transaction_cents: 0, total_transaction_currency: "IDR"},
+  {transaction_code: "11282020-IFJVKR", transaction_type: 1, user_id: 1, total_transaction_cents: 0, total_transaction_currency: "IDR"},
+  {transaction_code: "11282020-R9JBTA", transaction_type: 1, user_id: 1, total_transaction_cents: 0, total_transaction_currency: "IDR"},
+  {transaction_code: "11282020-8ZB7I5", transaction_type: 1, user_id: 1, total_transaction_cents: 0, total_transaction_currency: "IDR"},
+  {transaction_code: "11282020-02IVWK", transaction_type: 1, user_id: 1, total_transaction_cents: 0, total_transaction_currency: "IDR"},
+  {transaction_code: "11282020-AM7DVL", transaction_type: 1, user_id: 1, total_transaction_cents: 0, total_transaction_currency: "IDR"},
+  {transaction_code: "11282020-M5A5RV", transaction_type: 1, user_id: 1, total_transaction_cents: 0, total_transaction_currency: "IDR"},
+  {transaction_code: "11282020-VBYNLF", transaction_type: 1, user_id: 1, total_transaction_cents: 0, total_transaction_currency: "IDR"},
+  {transaction_code: "11282020-R5PAJP", transaction_type: 1, user_id: 1, total_transaction_cents: 0, total_transaction_currency: "IDR"},
+  {transaction_code: "11282020-SQ7PGS", transaction_type: 1, user_id: 1, total_transaction_cents: 0, total_transaction_currency: "IDR"},
+  {transaction_code: "11282020-6KRG2I", transaction_type: 1, user_id: 1, total_transaction_cents: 0, total_transaction_currency: "IDR"},
+  {transaction_code: "11282020-AZ5CIC", transaction_type: 1, user_id: 1, total_transaction_cents: 0, total_transaction_currency: "IDR"},
+  {transaction_code: "11282020-OU5VGB", transaction_type: 1, user_id: 1, total_transaction_cents: 0, total_transaction_currency: "IDR"},
+  {transaction_code: "11282020-FTKQDL", transaction_type: 1, user_id: 1, total_transaction_cents: 0, total_transaction_currency: "IDR"},
+  {transaction_code: "11282020-7G7MV7", transaction_type: 1, user_id: 1, total_transaction_cents: 0, total_transaction_currency: "IDR"},
+  {transaction_code: "11282020-5ZDPCR", transaction_type: 1, user_id: 1, total_transaction_cents: 20000, total_transaction_currency: "IDR"},
+  {transaction_code: "11282020-XX1BM4", transaction_type: 1, user_id: 1, total_transaction_cents: 119600, total_transaction_currency: "IDR"}
 ])
 UserWeb.create!([
   {email: "tester@tester.com", password_digest: "$2a$12$N2LA4KqhhuXSnLS/hS5mk.vIIbv5IAs8tEbJffwFtB7l9ugV5scPa", no_hp: "089732939213", name: "tester"},
-  {email: "tester12@tester.com", password_digest: "$2a$12$rzMDhMyDs1nbgj4vqdTLDe/6mq47EbFV9gKjyrtPnD0X6tg0rYswq", no_hp: "08973293921123", name: "testera"}
+  {email: "tester12@tester.com", password_digest: "$2a$12$rzMDhMyDs1nbgj4vqdTLDe/6mq47EbFV9gKjyrtPnD0X6tg0rYswq", no_hp: "08973293921123", name: "testera"},
+  {email: "tester@testser.com", password_digest: "$2a$12$BwZ3aahaqIU72x9lQf4GTuRDTD9DcWLDPs2kPZ3fXlnkNN/Y9VEIW", no_hp: "08973293923", name: "tester1"},
+  {email: "asjbns@jnnsdj.com", password_digest: "$2a$12$N4Efm2AA/CNiWi2/67Go/eMXHMpvjNTKH.ajp6XtcpOJJGp4qS7nq", no_hp: "09875431234", name: "qwreqweq"}
 ])
 Item.create!([
   {name_items: "Gudang Garam Filter", category_id: 1, product_picture: "download.png", brand_id: 1},
@@ -84,20 +118,22 @@ Item.create!([
   {name_items: "asdasdas", category_id: 1, product_picture: "download.png", brand_id: 1},
   {name_items: "Cap Harimau", category_id: 1, product_picture: "download.png", brand_id: 1},
   {name_items: "Kuda Tirus", category_id: 1, product_picture: "download.png", brand_id: 1},
-  {name_items: "Cap Bajing", category_id: 1, product_picture: "download.png", brand_id: 1}
+  {name_items: "Cap Bajing", category_id: 1, product_picture: "download.png", brand_id: 1},
+  {name_items: "Kapal Special Mix", category_id: 2, product_picture: "kapal+api_special_mix.jpg", brand_id: 3}
 ])
 Inventory.create!([
-  {item_id: 1, stock: 868, check_in: 1296, check_out: 428},
-  {item_id: 2, stock: 231, check_in: 306, check_out: 285},
-  {item_id: 3, stock: 118, check_in: 20, check_out: 2},
+  {item_id: 1, stock: 866, check_in: 1296, check_out: 430},
+  {item_id: 2, stock: 211, check_in: 306, check_out: 305},
+  {item_id: 3, stock: 116, check_in: 20, check_out: 4},
   {item_id: 4, stock: 360, check_in: 260, check_out: 0},
   {item_id: 5, stock: 30, check_in: 20, check_out: 90},
-  {item_id: 6, stock: 120, check_in: 20, check_out: 0},
+  {item_id: 6, stock: 108, check_in: 20, check_out: 12},
   {item_id: 7, stock: 120, check_in: 20, check_out: 0},
-  {item_id: 8, stock: 120, check_in: 10, check_out: 0},
-  {item_id: 9, stock: 130, check_in: 30, check_out: 0},
+  {item_id: 8, stock: 108, check_in: 10, check_out: 12},
+  {item_id: 9, stock: 118, check_in: 30, check_out: 12},
   {item_id: 10, stock: 900, check_in: 900, check_out: 0},
-  {item_id: 11, stock: 120, check_in: 20, check_out: 0}
+  {item_id: 11, stock: 120, check_in: 20, check_out: 0},
+  {item_id: 12, stock: 2064, check_in: 2100, check_out: 36}
 ])
 Brand.create!([
   {name: "Maju Bersama ", company: "Saha eta", user_id: 1},
@@ -123,7 +159,8 @@ VariantSize.create!([
   {variant_name: "piece", qty_size: 1, item_id: 10, sell_price_cents: 1000, sell_price_currency: "IDR"},
   {variant_name: "bungkus", qty_size: 16, item_id: 1, sell_price_cents: 21000, sell_price_currency: "IDR"},
   {variant_name: "bungkus kecil", qty_size: 12, item_id: 1, sell_price_cents: 16000, sell_price_currency: "IDR"},
-  {variant_name: "batang", qty_size: 1, item_id: 11, sell_price_cents: 1000, sell_price_currency: "IDR"}
+  {variant_name: "batang", qty_size: 1, item_id: 11, sell_price_cents: 1000, sell_price_currency: "IDR"},
+  {variant_name: "piece", qty_size: 1, item_id: 12, sell_price_cents: 1200, sell_price_currency: "IDR"}
 ])
 MinimumSize.create!([
   {inventory_id: 1, variant_size_id: 1},
@@ -136,9 +173,12 @@ MinimumSize.create!([
   {inventory_id: 8, variant_size_id: 8},
   {inventory_id: 9, variant_size_id: 9},
   {inventory_id: 10, variant_size_id: 10},
-  {inventory_id: 11, variant_size_id: 13}
+  {inventory_id: 11, variant_size_id: 13},
+  {inventory_id: 12, variant_size_id: 14}
 ])
 User.create!([
   {email: "tester@tester.com", password_digest: "$2a$12$N2LA4KqhhuXSnLS/hS5mk.vIIbv5IAs8tEbJffwFtB7l9ugV5scPa", no_hp: "089732939213", name: "tester"},
-  {email: "tester12@tester.com", password_digest: "$2a$12$rzMDhMyDs1nbgj4vqdTLDe/6mq47EbFV9gKjyrtPnD0X6tg0rYswq", no_hp: "08973293921123", name: "testera"}
+  {email: "tester12@tester.com", password_digest: "$2a$12$rzMDhMyDs1nbgj4vqdTLDe/6mq47EbFV9gKjyrtPnD0X6tg0rYswq", no_hp: "08973293921123", name: "testera"},
+  {email: "tester@testser.com", password_digest: "$2a$12$BwZ3aahaqIU72x9lQf4GTuRDTD9DcWLDPs2kPZ3fXlnkNN/Y9VEIW", no_hp: "08973293923", name: "tester1"},
+  {email: "asjbns@jnnsdj.com", password_digest: "$2a$12$N4Efm2AA/CNiWi2/67Go/eMXHMpvjNTKH.ajp6XtcpOJJGp4qS7nq", no_hp: "09875431234", name: "qwreqweq"}
 ])

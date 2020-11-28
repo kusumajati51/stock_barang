@@ -48,7 +48,18 @@ module Api
           total_pieces = variant_size.qty_size.to_i * sold.to_i
           order = Order.new(sold: sold, order_price_cents: price, variant_size_id: variant_size.id, total_pieces: total_pieces)
           @transactions.orders << order
-        end
+        end # @item ||= []
+        # @products.each do |product|
+        #   inventory = product.inventory
+        #   data = { id:   product.id,
+        #            name: product.name_items,
+        #            url: "http://#{request.host}:#{request.port}#{ + product.product_picture_url}",
+        #            check_in: inventory.check_in,
+        #            stock: inventory.stock,
+        #            check_out: inventory.check_out,
+        #            variant: product.variant_sizes }
+        #   @item.push(data)
+        # end
         @transactions.total_transaction_cents = @total
         puts(@total)
         if @transactions.save
