@@ -105,6 +105,7 @@ CheckInItem.create!([
   {total_item: 30, variant_size_id: 4, sales_invoice_id: 17, buy_price_cents: 12000, buy_price_currency: "IDR", total_pieces: 240},
   {total_item: 6, variant_size_id: 11, sales_invoice_id: 21, buy_price_cents: 1200, buy_price_currency: "IDR", total_pieces: 96},
   {total_item: 8, variant_size_id: 11, sales_invoice_id: 22, buy_price_cents: 12000, buy_price_currency: "IDR", total_pieces: 128}
+  
 ])
 
 Order.create!([
