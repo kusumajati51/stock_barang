@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Class: Api::V1::OrderController
+  
+    &mdash; Documentation by YARD 0.9.25
+  
+</title>
+
+  <link rel="stylesheet" href="../../css/style.css" type="text/css" />
+
+  <link rel="stylesheet" href="../../css/common.css" type="text/css" />
+
+<script type="text/javascript">
+  pathId = "Api::V1::OrderController";
+  relpath = '../../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../../class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../../_index.html">Index (O)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../Api.html" title="Api (module)">Api</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../V1.html" title="Api::V1 (module)">V1</a></span></span>
+     &raquo; 
+    <span class="title">OrderController</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../../class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Class: Api::V1::OrderController
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+  <dl>
+    <dt>Inherits:</dt>
+    <dd>
+      <span class="inheritName"><span class='object_link'><a href="../../ApiController.html" title="ApiController (class)">ApiController</a></span></span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">ActionController::API</li>
+          
+            <li class="next"><span class='object_link'><a href="../../ApiController.html" title="ApiController (class)">ApiController</a></span></li>
+          
+            <li class="next">Api::V1::OrderController</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+    </dd>
+  </dl>
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>app/controllers/api/v1/order_controller.rb</dd>
+  </dl>
+  
+</div>
+
+
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#create-instance_method" title="#create (instance method)">#<strong>create</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#index-instance_method" title="#index (instance method)">#<strong>index</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#multi_order-instance_method" title="#multi_order (instance method)">#<strong>multi_order</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#show_dashboard-instance_method" title="#show_dashboard (instance method)">#<strong>show_dashboard</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods inherited from <span class='object_link'><a href="../../ApiController.html" title="ApiController (class)">ApiController</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="../../ApiController.html#referencing_transaction-instance_method" title="ApiController#referencing_transaction (method)">#referencing_transaction</a></span></p>
+
+  
+  
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="create-instance_method">
+  
+    #<strong>create</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/api/v1/order_controller.rb', line 11</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_create'>create</span>
+    <span class='ivar'>@items</span> <span class='op'>=</span> <span class='id identifier rubyid_current_user'>current_user</span><span class='period'>.</span><span class='id identifier rubyid_items'>items</span><span class='period'>.</span><span class='id identifier rubyid_find_by'>find_by</span><span class='lparen'>(</span><span class='label'>id:</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+    <span class='ivar'>@total</span> <span class='op'>=</span> <span class='int'>0</span><span class='semicolon'>;</span>
+    <span class='ivar'>@variant</span> <span class='op'>=</span> <span class='ivar'>@items</span><span class='period'>.</span><span class='id identifier rubyid_variant_sizes'>variant_sizes</span><span class='period'>.</span><span class='id identifier rubyid_find_by'>find_by</span><span class='lparen'>(</span><span class='label'>id:</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:variant_id</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+    <span class='ivar'>@sold</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:sold</span><span class='rbracket'>]</span>
+    <span class='ivar'>@price</span> <span class='op'>=</span> <span class='ivar'>@variant</span><span class='period'>.</span><span class='id identifier rubyid_sell_price_cents'>sell_price_cents</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span> <span class='op'>*</span> <span class='ivar'>@sold</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span>
+    <span class='id identifier rubyid_total_pieces'>total_pieces</span> <span class='op'>=</span> <span class='ivar'>@variant</span><span class='period'>.</span><span class='id identifier rubyid_qty_size'>qty_size</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span> <span class='op'>*</span> <span class='ivar'>@sold</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span>
+    <span class='ivar'>@total</span> <span class='op'>+=</span> <span class='ivar'>@price</span>
+    <span class='ivar'>@transaction</span> <span class='op'>=</span> <span class='id identifier rubyid_current_user'>current_user</span><span class='period'>.</span><span class='id identifier rubyid_sales_invoices'>sales_invoices</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='label'>transaction_type:</span> <span class='int'>1</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_order'>order</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../../Order.html" title="Order (class)">Order</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='label'>sold:</span> <span class='ivar'>@sold</span><span class='comma'>,</span> <span class='label'>order_price_cents:</span> <span class='ivar'>@total</span> <span class='comma'>,</span> <span class='label'>variant_size_id:</span> <span class='ivar'>@variant</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='label'>total_pieces:</span> <span class='id identifier rubyid_total_pieces'>total_pieces</span><span class='rparen'>)</span>
+    <span class='ivar'>@transaction</span><span class='period'>.</span><span class='id identifier rubyid_total_transaction_cents'>total_transaction_cents</span> <span class='op'>=</span> <span class='ivar'>@total</span>
+    <span class='ivar'>@transaction</span><span class='period'>.</span><span class='id identifier rubyid_orders'>orders</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_order'>order</span>
+    <span class='kw'>if</span> <span class='ivar'>@transaction</span><span class='period'>.</span><span class='id identifier rubyid_save'>save</span>
+      <span class='id identifier rubyid_render'>render</span> <span class='label'>json:</span> <span class='ivar'>@transaction</span><span class='period'>.</span><span class='id identifier rubyid_orders'>orders</span>
+    <span class='kw'>else</span>
+      <span class='id identifier rubyid_errors'>errors</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
+      <span class='ivar'>@transaction</span><span class='period'>.</span><span class='id identifier rubyid_errors'>errors</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_attr'>attr</span><span class='comma'>,</span> <span class='id identifier rubyid_msg'>msg</span><span class='op'>|</span>
+        <span class='kw'>if</span><span class='lparen'>(</span><span class='id identifier rubyid_msg'>msg</span> <span class='op'>!=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>is invalid</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+          <span class='id identifier rubyid_errors'>errors</span><span class='lbracket'>[</span><span class='id identifier rubyid_attr'>attr</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_msg'>msg</span>
+        <span class='kw'>end</span>
+      <span class='kw'>end</span>
+      <span class='id identifier rubyid_render'>render</span> <span class='label'>json:</span> <span class='lbrace'>{</span><span class='label'>error:</span> <span class='id identifier rubyid_errors'>errors</span><span class='comma'>,</span> <span class='label'>price:</span> <span class='ivar'>@price</span><span class='rbrace'>}</span>
+    <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="index-instance_method">
+  
+    #<strong>index</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+6
+7
+8
+9</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/api/v1/order_controller.rb', line 6</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_index'>index</span>
+  <span class='ivar'>@orders</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../../Order.html" title="Order (class)">Order</a></span></span><span class='period'>.</span><span class='id identifier rubyid_all'>all</span>
+  <span class='id identifier rubyid_render'>render</span> <span class='label'>json:</span> <span class='ivar'>@orders</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="multi_order-instance_method">
+  
+    #<strong>multi_order</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/api/v1/order_controller.rb', line 36</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_multi_order'>multi_order</span>
+  <span class='ivar'>@check_errors</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+  <span class='ivar'>@items</span> <span class='op'>=</span> <span class='id identifier rubyid_current_user'>current_user</span><span class='period'>.</span><span class='id identifier rubyid_items'>items</span>
+  <span class='ivar'>@param</span> <span class='op'>=</span> <span class='id identifier rubyid_multi_order_param'>multi_order_param</span>
+  <span class='ivar'>@orders</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+  <span class='ivar'>@total</span> <span class='op'>=</span> <span class='int'>0</span><span class='semicolon'>;</span>
+  <span class='ivar'>@transactions</span> <span class='op'>=</span> <span class='id identifier rubyid_current_user'>current_user</span><span class='period'>.</span><span class='id identifier rubyid_sales_invoices'>sales_invoices</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='label'>transaction_type:</span> <span class='int'>1</span><span class='rparen'>)</span>
+  <span class='ivar'>@param</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_p'>p</span><span class='op'>|</span>
+    <span class='id identifier rubyid_variant_size'>variant_size</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../../VariantSize.html" title="VariantSize (class)">VariantSize</a></span></span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span><span class='lparen'>(</span><span class='id identifier rubyid_p'>p</span><span class='lbracket'>[</span><span class='symbol'>:variant_id</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_sold'>sold</span> <span class='op'>=</span> <span class='id identifier rubyid_p'>p</span><span class='lbracket'>[</span><span class='symbol'>:sold</span><span class='rbracket'>]</span>
+    <span class='id identifier rubyid_price'>price</span> <span class='op'>=</span> <span class='id identifier rubyid_variant_size'>variant_size</span><span class='period'>.</span><span class='id identifier rubyid_sell_price_cents'>sell_price_cents</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span> <span class='op'>*</span> <span class='id identifier rubyid_sold'>sold</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span> 
+    <span class='ivar'>@total</span> <span class='op'>+=</span> <span class='id identifier rubyid_price'>price</span>
+    <span class='id identifier rubyid_total_pieces'>total_pieces</span> <span class='op'>=</span> <span class='id identifier rubyid_variant_size'>variant_size</span><span class='period'>.</span><span class='id identifier rubyid_qty_size'>qty_size</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span> <span class='op'>*</span> <span class='id identifier rubyid_sold'>sold</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span>
+    <span class='id identifier rubyid_order'>order</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../../Order.html" title="Order (class)">Order</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='label'>sold:</span> <span class='id identifier rubyid_sold'>sold</span><span class='comma'>,</span> <span class='label'>order_price_cents:</span> <span class='id identifier rubyid_price'>price</span><span class='comma'>,</span> <span class='label'>variant_size_id:</span> <span class='id identifier rubyid_variant_size'>variant_size</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='label'>total_pieces:</span> <span class='id identifier rubyid_total_pieces'>total_pieces</span><span class='rparen'>)</span>
+    <span class='ivar'>@transactions</span><span class='period'>.</span><span class='id identifier rubyid_orders'>orders</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_order'>order</span>
+  <span class='kw'>end</span>
+  <span class='ivar'>@transactions</span><span class='period'>.</span><span class='id identifier rubyid_total_transaction_cents'>total_transaction_cents</span> <span class='op'>=</span> <span class='ivar'>@total</span>
+  <span class='id identifier rubyid_puts'>puts</span><span class='lparen'>(</span><span class='ivar'>@total</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='ivar'>@transactions</span><span class='period'>.</span><span class='id identifier rubyid_save'>save</span>
+    <span class='id identifier rubyid_render'>render</span> <span class='label'>json:</span> <span class='ivar'>@transactions</span><span class='period'>.</span><span class='id identifier rubyid_orders'>orders</span>
+  <span class='kw'>else</span>
+    <span class='ivar'>@transactions</span><span class='period'>.</span><span class='id identifier rubyid_orders'>orders</span><span class='period'>.</span><span class='id identifier rubyid_each_with_index'>each_with_index</span> <span class='kw'>do</span> <span class='op'>|</span> <span class='id identifier rubyid_order'>order</span><span class='comma'>,</span> <span class='id identifier rubyid_index'>index</span><span class='op'>|</span>
+        <span class='id identifier rubyid_check_valid'>check_valid</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
+        <span class='id identifier rubyid_order'>order</span><span class='period'>.</span><span class='id identifier rubyid_errors'>errors</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_attr'>attr</span><span class='comma'>,</span> <span class='id identifier rubyid_msg'>msg</span><span class='op'>|</span>
+          <span class='id identifier rubyid_check_valid'>check_valid</span><span class='lbracket'>[</span><span class='id identifier rubyid_attr'>attr</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_msg'>msg</span>
+        <span class='kw'>end</span>
+        <span class='id identifier rubyid_check_valid'>check_valid</span><span class='lbracket'>[</span><span class='symbol'>:index</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_index'>index</span>
+        <span class='kw'>unless</span> <span class='id identifier rubyid_order'>order</span><span class='period'>.</span><span class='id identifier rubyid_valid?'>valid?</span>
+          <span class='ivar'>@check_errors</span><span class='period'>.</span><span class='id identifier rubyid_push'>push</span><span class='lparen'>(</span><span class='id identifier rubyid_check_valid'>check_valid</span><span class='rparen'>)</span>
+        <span class='kw'>end</span> 
+      <span class='kw'>end</span>
+    <span class='id identifier rubyid_render'>render</span> <span class='label'>json:</span> <span class='ivar'>@check_errors</span><span class='comma'>,</span> <span class='label'>status:</span> <span class='int'>442</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="show_dashboard-instance_method">
+  
+    #<strong>show_dashboard</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/api/v1/order_controller.rb', line 71</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_show_dashboard'>show_dashboard</span>
+  <span class='ivar'>@id</span> <span class='op'>=</span> <span class='id identifier rubyid_current_user'>current_user</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span>
+  <span class='id identifier rubyid_sql_order'>sql_order</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> SELECT COUNT(DATE_FORMAT(si.created_at, \&quot;%d-%m-%Y\&quot;)) as create_count, 
+                DATE_FORMAT(si.created_at,  \&quot;%d-%m-%Y\&quot;) as date_order,
+                SUM(o.order_price_cents) as total_price, 
+                SUM(o.sold) as total_sold
+                FROM sales_invoices si
+                JOIN orders o ON o.sales_invoice_id  = si.id
+                WHERE si.user_id = </span><span class='embexpr_beg'>#{</span><span class='ivar'>@id</span><span class='embexpr_end'>}</span><span class='tstring_content'>
+                AND si.transaction_type = 1
+                GROUP BY DATE_FORMAT(si.created_at,  \&quot;%d-%m-%Y\&quot;)</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_sql_order_items'>sql_order_items</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>SELECT i.name_items,
+                            SUM(o.sold) as sold,
+                            SUM(o.order_price_cents) as sold_price 
+                      FROM items i 
+                      JOIN categories c ON c.id  = i.category_id
+                      JOIN variant_sizes vs ON vs.item_id = i.id 
+                      JOIN orders o ON o.variant_size_id  = vs.id 
+                      WHERE c.user_id = </span><span class='embexpr_beg'>#{</span><span class='ivar'>@id</span><span class='embexpr_end'>}</span><span class='tstring_content'>
+                      GROUP BY i.id
+                      HAVING COUNT(i.id)</span><span class='tstring_end'>&quot;</span></span>              
+  <span class='comment'># sql_add_items = &quot;select * from sales_invoices
+</span>  <span class='comment'>#                  join check_in_items on sales_invoice_id = sales_invoices.id
+</span>  <span class='comment'>#                  where user_id = #{@id}&quot;
+</span>  <span class='comment'># records_order = SalesInvoice.find_by_sql(&quot;select * from sales_invoices&quot;)
+</span>  <span class='id identifier rubyid_query_dashborad'>query_dashborad</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../../SalesInvoice.html" title="SalesInvoice (class)">SalesInvoice</a></span></span><span class='period'>.</span><span class='id identifier rubyid_find_by_sql'>find_by_sql</span><span class='lparen'>(</span><span class='id identifier rubyid_sql_order'>sql_order</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_query_item_count'>query_item_count</span> <span class='op'>=</span> <span class='id identifier rubyid_current_user'>current_user</span><span class='period'>.</span><span class='id identifier rubyid_items'>items</span><span class='period'>.</span><span class='id identifier rubyid_find_by_sql'>find_by_sql</span><span class='lparen'>(</span><span class='id identifier rubyid_sql_order_items'>sql_order_items</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_invoices'>invoices</span> <span class='op'>=</span> <span class='id identifier rubyid_current_user'>current_user</span><span class='period'>.</span><span class='id identifier rubyid_sales_invoices'>sales_invoices</span><span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='label'>transaction_type:</span> <span class='int'>1</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_transaction_hisory'>transaction_hisory</span> <span class='op'>=</span> <span class='id identifier rubyid_invoices'>invoices</span><span class='period'>.</span><span class='id identifier rubyid_as_json'>as_json</span><span class='lparen'>(</span><span class='label'>only:</span> <span class='lbracket'>[</span><span class='symbol'>:id</span><span class='comma'>,</span> <span class='symbol'>:transaction_code</span><span class='comma'>,</span> <span class='symbol'>:total_transaction_cents</span><span class='comma'>,</span> <span class='symbol'>:created_at</span><span class='rbracket'>]</span><span class='comma'>,</span>
+    <span class='symbol'>:include</span><span class='op'>=&gt;</span><span class='lbracket'>[</span><span class='symbol'>:orders</span> <span class='op'>=&gt;</span><span class='lbrace'>{</span><span class='symbol'>:only</span><span class='op'>=&gt;</span><span class='lbracket'>[</span><span class='symbol'>:id</span><span class='comma'>,</span> <span class='symbol'>:sold</span><span class='comma'>,</span> <span class='symbol'>:total_pieces</span><span class='comma'>,</span> <span class='symbol'>:created_at</span><span class='comma'>,</span> <span class='symbol'>:order_price_cent</span><span class='rbracket'>]</span><span class='rbrace'>}</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_dash_board'>dash_board</span> <span class='op'>=</span> <span class='id identifier rubyid_query_dashborad'>query_dashborad</span><span class='period'>.</span><span class='id identifier rubyid_as_json'>as_json</span><span class='lparen'>(</span><span class='label'>only:</span><span class='lbracket'>[</span><span class='symbol'>:total_price</span><span class='comma'>,</span> <span class='symbol'>:total_sold</span><span class='comma'>,</span> <span class='symbol'>:date_order</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_items_order'>items_order</span> <span class='op'>=</span> <span class='id identifier rubyid_query_item_count'>query_item_count</span><span class='period'>.</span><span class='id identifier rubyid_as_json'>as_json</span><span class='lparen'>(</span><span class='label'>only:</span> <span class='qsymbols_beg'>%i[</span><span class='tstring_content'>:name_items,</span><span class='words_sep'> </span><span class='tstring_content'>sold,</span><span class='words_sep'> </span><span class='tstring_content'>sold_price</span><span class='tstring_end'>]</span></span><span class='rparen'>)</span>
+  <span class='comment'># render json: invoices , include: [ :orders]
+</span>  <span class='id identifier rubyid_render'>render</span> <span class='label'>json:</span> <span class='lbrace'>{</span><span class='label'>status:</span> <span class='int'>1</span><span class='comma'>,</span>
+                <span class='label'>messages:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Success</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+                <span class='label'>data:</span> <span class='lbrace'>{</span>
+                        <span class='label'>dash_board:</span> <span class='id identifier rubyid_dash_board'>dash_board</span><span class='comma'>,</span>
+                        <span class='label'>items_order:</span> <span class='id identifier rubyid_query_item_count'>query_item_count</span><span class='comma'>,</span>
+                        <span class='label'>transaction_hisory:</span> <span class='id identifier rubyid_transaction_hisory'>transaction_hisory</span>
+                      <span class='rbrace'>}</span>
+                <span class='rbrace'>}</span><span class='comma'>,</span> <span class='label'>status:</span> <span class='int'>200</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Mon Dec  7 10:32:34 2020 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.25 (ruby-2.7.0).
+</div>
+
+    </div>
+  </body>
+</html>

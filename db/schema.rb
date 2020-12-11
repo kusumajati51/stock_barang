@@ -10,13 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_09_095847) do
+ActiveRecord::Schema.define(version: 2020_12_07_144229) do
 
-<<<<<<< HEAD
   create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
-=======
-  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
->>>>>>> 2a41df35fcf09e349685b77186d3df4b8ed28f30
     t.string "name"
     t.string "company"
     t.bigint "user_id", null: false
@@ -25,17 +21,9 @@ ActiveRecord::Schema.define(version: 2020_09_09_095847) do
     t.index ["user_id"], name: "index_brands_on_user_id"
   end
 
-<<<<<<< HEAD
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name_category"
     t.string "attachment"
-=======
-  create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.string "name"
-    t.bigint "category_id"
-    t.integer "price"
-    t.date "released_on"
->>>>>>> 2a41df35fcf09e349685b77186d3df4b8ed28f30
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -44,13 +32,13 @@ ActiveRecord::Schema.define(version: 2020_09_09_095847) do
 
   create_table "check_in_items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "total_item"
+    t.bigint "sales_invoice_id"
+    t.bigint "variant_size_id"
+    t.integer "total_pieces"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "variant_size_id"
-    t.bigint "sales_invoice_id"
     t.integer "buy_price_cents", default: 0
     t.string "buy_price_currency", default: "IDR", null: false
-    t.integer "total_pieces"
     t.index ["sales_invoice_id"], name: "index_check_in_items_on_sales_invoice_id"
     t.index ["variant_size_id"], name: "index_check_in_items_on_variant_size_id"
   end
@@ -65,51 +53,49 @@ ActiveRecord::Schema.define(version: 2020_09_09_095847) do
     t.index ["item_id"], name: "index_inventories_on_item_id"
   end
 
+  create_table "inventories_variant_sizes", id: false, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "inventory_id", null: false
+    t.bigint "variant_size_id", null: false
+  end
+
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name_items"
     t.bigint "category_id"
+    t.bigint "brand_id"
+    t.integer "price"
     t.string "product_picture"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "brand_id"
     t.index ["brand_id"], name: "index_items_on_brand_id"
     t.index ["category_id"], name: "index_items_on_category_id"
   end
 
-  create_table "minimum_sizes", id: false, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.bigint "inventory_id"
-    t.bigint "variant_size_id"
-    t.index ["inventory_id"], name: "index_minimum_sizes_on_inventory_id"
-    t.index ["variant_size_id"], name: "index_minimum_sizes_on_variant_size_id"
-  end
-
   create_table "orders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.integer "buy_price"
+    t.integer "total_item"
+    t.bigint "sales_invoice_id"
+    t.bigint "variant_size_id"
     t.integer "sold"
+    t.integer "total_pieces"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "variant_size_id"
-    t.bigint "sales_invoice_id"
     t.integer "order_price_cents", default: 0
     t.string "order_price_currency", default: "IDR", null: false
-    t.integer "total_pieces"
     t.index ["sales_invoice_id"], name: "index_orders_on_sales_invoice_id"
     t.index ["variant_size_id"], name: "index_orders_on_variant_size_id"
   end
 
-<<<<<<< HEAD
   create_table "sales_invoices", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "user_id"
     t.string "transaction_code"
     t.integer "transaction_type"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.bigint "user_id"
-    t.integer "total_transaction_cents"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "total_transaction_cents", default: 0
     t.string "total_transaction_currency", default: "IDR", null: false
     t.index ["user_id"], name: "index_sales_invoices_on_user_id"
   end
 
-=======
->>>>>>> 2a41df35fcf09e349685b77186d3df4b8ed28f30
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "email"
     t.string "password_digest"
@@ -137,8 +123,6 @@ ActiveRecord::Schema.define(version: 2020_09_09_095847) do
   add_foreign_key "inventories", "items"
   add_foreign_key "items", "brands"
   add_foreign_key "items", "categories"
-  add_foreign_key "minimum_sizes", "inventories"
-  add_foreign_key "minimum_sizes", "variant_sizes"
   add_foreign_key "orders", "sales_invoices"
   add_foreign_key "orders", "variant_sizes"
   add_foreign_key "sales_invoices", "users"

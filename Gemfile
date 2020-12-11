@@ -30,7 +30,7 @@ gem 'validates_email_format_of'
 
 gem 'rack-cors'
 
-gem  'ripper-tags'
+gem 'ripper-tags'
 
 gem 'money-rails', '~>1.12'
 
@@ -40,7 +40,7 @@ gem 'seed_dump'
 
 gem 'rubocop', require: false
 
-gem 'therubyracer',  platforms: :ruby
+gem 'therubyracer', platforms: :ruby
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
@@ -48,16 +48,18 @@ gem 'therubyracer',  platforms: :ruby
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
+gem 'solargraph'
+
+gem 'rufo'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'solargraph'
+  gem 'byebug', platforms: %i[mri mingw x64_mingw]
 end
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 3.3.0'
-  
 end
 
 group :test do

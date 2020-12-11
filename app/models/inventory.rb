@@ -3,7 +3,7 @@ class Inventory < ApplicationRecord
     has_many :minimum_sizes, dependent: :destroy
     has_many :variant_sizes, through: :minimum_sizes
     after_create :init
-    
+    self.table_name = "inventories"
     def init
         if self.check_in == 0
             self.check_in = 0

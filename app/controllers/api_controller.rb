@@ -7,9 +7,10 @@ class ApiController < ActionController::API
 
     def referencing_transaction
         array = []
-        order = { type: 1, type_name: "order"}
-        order = { type: 2, type_name: "get_items"}
-        array.push(order)
+        order_one = { type: 1, type_name: "order"}
+        order_two = { type: 2, type_name: "get_items"}
+        array.push(order_one)
+        array.push(order_two)
         render json: array
     end    
 
