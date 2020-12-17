@@ -7,23 +7,25 @@ Rails.application.routes.draw do
       post '/login', to: 'login#create'
 
       get '/item/index', to: 'item#index'
-      get '/category/index/menu', to: 'item#index'
       get 'item/show/:id', to: 'item#show'
+      post '/product/baru', to: 'item#create'
 
       get '/category/index/spinner', to: 'category#spinner_category'
       get '/category/show/all', to: 'category#show_all_category'
       get 'category/index/all', to: 'category#liston'
       get '/category/list', to: 'category#index'
-      get '/order/list', to: 'order#index'
-
-      post '/product/baru', to: 'item#create'
       post '/category/baru', to: 'category#create'
+      
+      
+      get '/order/list', to: 'order#index'
       post '/order/baru', to: 'order#create'
       post '/order/multi', to: 'order#multi_order'
 
       post '/create/variant', to: 'inventory#create_variant_name'
       get '/variant/:id', to: 'inventory#get_data_variant'
-      post '/create/inventory', to: 'inventory#create_inventory'
+     
+      patch '/update/inventory', to: 'inventory#update_inventory'
+
 
       post '/create/brand', to: 'brand#create_brand'
       post '/multi/create/brand', to: 'brand#multi_create_brand'

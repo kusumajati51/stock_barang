@@ -51,7 +51,7 @@ Inventory.create!([
   {item_id: 2, stock: 231, check_in: 306, check_out: 285},
   {item_id: 3, stock: 118, check_in: 20, check_out: 2},
   {item_id: 4, stock: 360, check_in: 260, check_out: 0},
-  {item_id: 5, stock: 30, check_in: 20, check_out: 90},
+  {item_id: 5, stock: 1030, check_in: 20, check_out: 90},
   {item_id: 6, stock: 120, check_in: 20, check_out: 0},
   {item_id: 7, stock: 120, check_in: 20, check_out: 0},
   {item_id: 8, stock: 120, check_in: 10, check_out: 0},

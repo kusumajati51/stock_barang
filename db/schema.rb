@@ -62,7 +62,6 @@ ActiveRecord::Schema.define(version: 2020_12_07_144229) do
     t.string "name_items"
     t.bigint "category_id"
     t.bigint "brand_id"
-    t.integer "price"
     t.string "product_picture"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -71,12 +70,10 @@ ActiveRecord::Schema.define(version: 2020_12_07_144229) do
   end
 
   create_table "orders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.integer "buy_price"
-    t.integer "total_item"
-    t.bigint "sales_invoice_id"
-    t.bigint "variant_size_id"
     t.integer "sold"
     t.integer "total_pieces"
+    t.bigint "sales_invoice_id"
+    t.bigint "variant_size_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "order_price_cents", default: 0

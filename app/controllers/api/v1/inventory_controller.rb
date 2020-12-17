@@ -3,7 +3,7 @@ module Api
     class InventoryController < ApiController
         before_action :authorize_access_request!
 
-        def create_inventory
+        def update_inventory
           @param = param_inventory
           @variants = VariantSize.find(@param[:variant_size_id])
           @item = current_user.items.find(@variants.item_id)
