@@ -4,7 +4,7 @@ module Api
             before_action :authorize_access_request!
 
             def index
-                @catergories = current_user.categories.all
+                @catergories = Categories.all
                 @item ||=[]
                 @catergories.each do |category|
                     data = {id: category.id ,name: category.name_category,
@@ -16,7 +16,7 @@ module Api
             end
 
             def spinner_category
-                @catergories = current_user.categories.all
+                @catergories = Category.all
                 @catergoryData ||=[]
                 @brandData ||= []
                 @catergories.each do |category|
@@ -38,9 +38,9 @@ module Api
             end
 
             def create
-                category = current_user.categories.new(category_param)
-                category.save  
-                if category.save                
+                category = Category.new(category_param)
+                category.save
+                if category.save
                     render json: category
                 else
                     render json: {status: 0,error: @category.errors},status: :unprocessable_entity

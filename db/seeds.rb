@@ -3,19 +3,19 @@ UserWeb.create!([
   {email: "tester12@tester.com", password_digest: "$2a$12$rzMDhMyDs1nbgj4vqdTLDe/6mq47EbFV9gKjyrtPnD0X6tg0rYswq", no_hp: "08973293921123", name: "testera"}
 ])
 Category.create!([
-  {name_category: "Rokok", attachment: "ilustrasi-rokok-2.jpg", user_id: 1},
-  {name_category: "Kopi", attachment: "kopi_icon.png", user_id: 1}
+  {name_category: "Rokok", attachment: "ilustrasi-rokok-2.jpg"},
+  {name_category: "Kopi", attachment: "kopi_icon.png"}
 ])
 Brand.create!([
-  {name: "Maju Bersama ", company: "Saha eta", user_id: 1},
-  {name: "Gudang Garam", company: "Gudang Garam tbk", user_id: 1},
-  {name: "Kapal Api", company: "Kapal Api tbk", user_id: 1},
-  {name: "Sampoerna", company: "Sampoerna tbk", user_id: 1},
-  {name: "Ajiz Brand", company: "Ajiz Kencana", user_id: 1},
-  {name: "Kuda Liar", company: "Pt Kuda Sejahtera", user_id: 1},
-  {name: "Awan Kinton", company: "SunggoKong", user_id: 1},
-  {name: " Malik Bersama", company: " Malik ", user_id: 1},
-  {name: " Malik Bersama", company: " Malik ", user_id: 1}
+  {name: "Maju Bersama ", company: "Saha eta"},
+  {name: "Gudang Garam", company: "Gudang Garam tbk"},
+  {name: "Kapal Api", company: "Kapal Api tbk"},
+  {name: "Sampoerna", company: "Sampoerna tbk"},
+  {name: "Ajiz Brand", company: "Ajiz Kencana"},
+  {name: "Kuda Liar", company: "Pt Kuda Sejahtera"},
+  {name: "Awan Kinton", company: "SunggoKong"},
+  {name: " Malik Bersama", company: " Malik "},
+  {name: " Malik Bersama", company: " Malik "}
 ])
 Item.create!([
   {name_items: "Gudang Garam Filter", category_id: 1, product_picture: "download.png", brand_id: 1},

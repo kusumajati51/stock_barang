@@ -4,7 +4,7 @@ module Api
       before_action :authorize_access_request!
 
       def index
-        @products = current_user.items.all
+        @products = Item.all
         @item ||= []
         @products.each do |product|
           inventory = product.inventory
@@ -21,15 +21,16 @@ module Api
       end
 
       def show
-        @item = current_user.items.find(params[:id])
+        @item = Item.find(params[:id])
         @items = Inventory.joins(:item).where("inventories.item_id", @item.id)
         @e = Item.joins(:inventory).merge(@items).includes(:inventory)
         render json: @e
       end
 
       def create
-        @param_i = param_inventory;
-        @item = current_user.items.build(product_param)
+        @category = Category.find(product_param['category_id'])
+        @param_i = param_inventory
+        @item = @category.items.build(product_param)
         @variant = @item.variant_sizes.build(param_variant)
         @inventory = @item.build_inventory(param_inventory)
         @variant.inventories << @inventory
@@ -54,6 +55,8 @@ module Api
           end
           render json: {status: 0, data: data_eror}, status: 422
         end
+        rescue ActiveRecord::RecordNotFound => e 
+          render json: {status: 0, message: e.to_s}, status: :bad_request 
       end
 
       private 
@@ -63,7 +66,7 @@ module Api
       end
 
       def param_variant
-        params.permit(:variant_name, :sell_price_cents, :qty_size)
+        params.permit(:variant_name, :sell_price_cents, : )
       end
 
       def param_inventory

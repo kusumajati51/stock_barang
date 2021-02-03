@@ -38,6 +38,9 @@ gem 'monetize'
 
 gem 'seed_dump'
 
+gem 'rails_to_postman'
+
+
 gem 'rubocop', require: false
 
 gem 'therubyracer', platforms: :ruby

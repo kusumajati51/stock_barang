@@ -4,12 +4,12 @@ module Api
             before_action :authorize_access_request!
 
             def index
-                @brands = current_user.brands.all
+                @brands = Brand.all
                 render json: {status: 1, messages: :ok ,data: @brands}
             end
 
             def create_brand
-                @brand = current_user.brands.new(brand_param)
+                @brand = Brand.new(brand_param)
                 if @brand.save
                     render json: @brand
                 else
@@ -23,7 +23,7 @@ module Api
                 @check_errors =[]
                 @brands = []
                 @params.each_with_index do |p, index|
-                    brand = current_user.brands.new(name: p[:name],company: p[:company])
+                    brand = Brand.new(name: p[:name],company: p[:company])
                     check_error = {}
                     @brands.push(brand)
                     unless brand.valid?

@@ -15,19 +15,15 @@ ActiveRecord::Schema.define(version: 2020_12_07_144229) do
   create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
     t.string "company"
-    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_brands_on_user_id"
   end
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name_category"
     t.string "attachment"
-    t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_categories_on_user_id"
   end
 
   create_table "check_in_items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -113,8 +109,6 @@ ActiveRecord::Schema.define(version: 2020_12_07_144229) do
     t.index ["item_id"], name: "index_variant_sizes_on_item_id"
   end
 
-  add_foreign_key "brands", "users"
-  add_foreign_key "categories", "users"
   add_foreign_key "check_in_items", "sales_invoices"
   add_foreign_key "check_in_items", "variant_sizes"
   add_foreign_key "inventories", "items"

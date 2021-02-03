@@ -3,7 +3,6 @@ class CreateCategory < ActiveRecord::Migration[6.0]
     create_table :categories do |t|
       t.string :name_category
       t.string :attachment
-      t.references :user, foreign_key: true
       t.timestamps
     end
   end
