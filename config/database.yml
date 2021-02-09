@@ -49,8 +49,7 @@ test:
 #
 production:
   # <<: *default
-  adapter: mysql2
-  url:  mysql://b8da88639a721a:ec7bb04a@us-cdbr-east-03.cleardb.com/heroku_cf21991d706709a?reconnect=true
+  url:  mysql2://b8da88639a721a:ec7bb04a@us-cdbr-east-03.cleardb.com/heroku_cf21991d706709a?reconnect=true
   # database: stock_barang_prod
   # username: root
   # password: 
