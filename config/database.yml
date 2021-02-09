@@ -49,7 +49,7 @@ test:
 #
 production:
   # <<: *default
-  url:  mysql://b7d810512dd45f:52d04887@us-cdbr-east-03.cleardb.com/heroku_90af14a6da5bb09?reconnect=true 
+  url:  mysql://b8da88639a721a:ec7bb04a@us-cdbr-east-03.cleardb.com/heroku_cf21991d706709a?reconnect=true
   # database: stock_barang_prod
   # username: root
   # password: 

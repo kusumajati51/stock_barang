@@ -6,15 +6,18 @@ module Api
         def update_inventory
           @param = param_inventory
           @variants = VariantSize.find(@param[:variant_size_id])
-          @item = current_user.items.find(@variants.item_id)
+          @item = Item.find(@variants.item_id)
           @transaction = current_user.sales_invoices.build(transaction_type: 2)
           total =@param[:buy_price_cents].to_i * @param[:total_item].to_i
           total_pieces = @variants.qty_size.to_i * @param[:total_item].to_i
-          @transaction.check_in_items.new(total_item: @param[:total_item], buy_price_cents: @param[:buy_price_cents], 
+          @transaction.check_in_items.new(total_item: @param[:total_item], buy_price_cents: @param[:buy_price_cents],
             variant_size_id: @variants.id, total_pieces: total_pieces)
           @transaction.total_transaction_cents = total
-          @transaction.save
-          render json: { status: 1, message: "Success add inventory", data: @transaction}
+          if @transaction.save
+            render json: { status: 1, message: "Success update inventory", data: @transaction}
+          else
+             render json: {status: 0, message: "Something whent wrong", error: @transaction.errors} 
+          end
         rescue ActiveRecord::RecordNotSaved => e
           render json: { status: 0 ,message: e.to_s}, status: 422
         rescue ActiveRecord::RecordNotFound => e

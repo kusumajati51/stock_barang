@@ -66,7 +66,7 @@ module Api
       end
 
       def param_variant
-        params.permit(:variant_name, :sell_price_cents, : )
+        params.permit(:variant_name, :sell_price_cents)
       end
 
       def param_inventory
