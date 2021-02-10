@@ -49,7 +49,8 @@ test:
 #
 production:
   # <<: *default
-  url:  mysql2://b8da88639a721a:ec7bb04a@us-cdbr-east-03.cleardb.com/heroku_cf21991d706709a?reconnect=true
+  # url:  mysql://yb5v2hxwz1p75yjs:he0nrlsby9j4wg3u@z5zm8hebixwywy9d.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/jysn74uzhz1tcn37
+  url: <%= ENV["DATABASE_URL"] %>
   # database: stock_barang_prod
-  username: b8da88639a721a
-  password: ec7bb04a
+  # username: yb5v2hxwz1p75yjs
+  # password: he0nrlsby9j4wg3u
