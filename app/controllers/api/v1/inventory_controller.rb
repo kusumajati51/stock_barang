@@ -25,7 +25,7 @@ module Api
         end
 
         def get_data_variant
-          @items = current_user.items.find(params[:id])
+          @items = Item.find(params[:id])
           @variants = @items.variant_sizes
           render json: @variants
         end
@@ -34,7 +34,8 @@ module Api
           @param = param_variant[:variant_size]
           @check_errors = {}
           @param.each_with_index do |p, index|
-              variant = VariantSize.new(p)
+              item = Item.find(p[:item_id])
+              variant = item.variant_sizes.new(p)
               if !variant.valid?
                 variant.errors.each do |attribute, error|
                   @check_errors[attribute] = error

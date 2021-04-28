@@ -4,7 +4,7 @@ module Api
             before_action :authorize_access_request!
 
             def index
-                @catergories = Categories.all
+                @catergories = Category.all
                 @item ||=[]
                 @catergories.each do |category|
                     data = {id: category.id ,name: category.name_category,
@@ -23,7 +23,7 @@ module Api
                     data = {id: category.id ,name: category.name_category, pictures: category.attachment.url}
                     @catergoryData.push(data)
                 end
-                @brands = current_user.brands
+                @brands = Brand.all
                 @brands.each do |brand|
                     dataBrand = {id: brand.id ,name: brand.name}
                     @brandData.push(dataBrand)
@@ -50,7 +50,7 @@ module Api
             end
 
             def show_all_category
-                categories = current_user.categories
+                categories = Category.all
                 # categories
                 render json: {status: 1, data: categories.as_json()}
             end

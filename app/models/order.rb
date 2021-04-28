@@ -1,5 +1,5 @@
 class Order < ApplicationRecord
-  belongs_to :sales_invoice
+  belongs_to :sales_invoice, inverse_of: :orders
   belongs_to :variant_size
   validates :sold, numericality: { only_integer: true }
   # Ex:- scope :active, -> {where(:active => true)}

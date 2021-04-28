@@ -1,6 +1,5 @@
 class User < ApplicationRecord
   has_secure_password
-  has_many :orders
   has_many :sales_invoices
   PASSWORD_REQUIREMENTS = /\A(?=.{8,})(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W)/x
   VALID_EMAIL_REGEX = /\A([\w+\-]\.?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i

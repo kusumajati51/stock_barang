@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
       get '/category/index/spinner', to: 'category#spinner_category'
       get '/category/show/all', to: 'category#show_all_category'
-      get 'category/index/all', to: 'category#liston'
+      # get '/category/index/all', to: 'category#liston'
       get '/category/list', to: 'category#index'
       post '/category/baru', to: 'category#create'
       
@@ -31,7 +31,10 @@ Rails.application.routes.draw do
       post '/multi/create/brand', to: 'brand#multi_create_brand'
       get '/brand/index', to: 'brand#index'
 
-      get '/dashboard/order', to: 'order#show_dashboard'
+      get '/dashboard/order/list', to: 'dashboard#show_dashboard_order_list'
+      get '/dashboard/order/item', to: 'dashboard#show_dashboard_order_sell'
+      get '/dashboard/order/transaction', to: 'dashboard#show_dashboard_show_transaction'
+
 
     end
   end

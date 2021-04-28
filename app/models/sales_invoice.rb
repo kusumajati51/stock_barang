@@ -1,11 +1,12 @@
 class SalesInvoice < ApplicationRecord
     belongs_to :user
-    after_create :update_data
+    before_create :set_invoice_code
     has_many :orders
-    after_initialize :set_invoice_code
+    # after_initialize :set_invoice_code
     has_many :check_in_items
     monetize :total_transaction_cents
     validates_associated_bubbling :orders
+
     # scope :orders ,->{ joins(:orders).where('orders.variant_size_id is not null') }
  
     def set_invoice_code

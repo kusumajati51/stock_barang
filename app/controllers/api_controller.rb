@@ -12,7 +12,7 @@ class ApiController < ActionController::API
         array.push(order_one)
         array.push(order_two)
         render json: array
-    end    
+    end
 
     private 
     def current_user
